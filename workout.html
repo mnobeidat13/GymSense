@@ -21,6 +21,10 @@
 
         <script>
             document.getElementById('background-image-div').appendChild(createNavbarVertical())
+            document.getElementById('background-image-div').addEventListener('click', function(){
+                const verticalNav = document.getElementById('vertical-nav-items-container');
+                verticalNav.classList.toggle('active');
+            })
         </script>
 
     </div>
