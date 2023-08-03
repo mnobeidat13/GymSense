@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymSense</title>
-    <link rel="stylesheet" href="styles.css/navbar.css">
-    <link rel="stylesheet" href="styles.css/index.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="scripts/navbar.js"></script>
 </head>
@@ -16,21 +16,27 @@
         document.body.appendChild(createNavbar())
     </script>
 
-    <div class="background-image-div">
+    <div class="background-image-div" id="background-image-div">
 
-        <div class="feature-bubble-div" style="left: 10vw; top: 15vh;">
+        <script>
+            document.getElementById('background-image-div').appendChild(createNavbarVertical())
+        </script>
+
+        <div class="feature-bubble-div bubble1">
             <img class="feature-bubble-image" src="resources/featureBubble1.png  " alt="feature-image">
 
         </div>
 
-        <div class="feature-bubble-div" style="right: 10vw; top: 17vh;">
+        <div class="feature-bubble-div bubble2">
             <img class="feature-bubble-image" src="resources/featureBubble2.png  " alt="feature-image">
         </div>
 
-        <div class="feature-bubble-div" style="bottom: 1vh;">
+        <div class="feature-bubble-div bubble3">
             <img class="feature-bubble-image" src="resources/featureBubble3.png  " alt="feature-image">
         </div>
-        <button>Get Started</button>
+        <button class="get-started-button"><img class="get-started-button-image" src="resources/getStartedButton.png" alt=""></button>
     </div>
+
+
 </body>
 </html>

@@ -10,7 +10,7 @@ function createElementWithAttributes(tag, attributes) {
 // Function to create the navbar component
 function createNavbar() {
     // Create the navbar elements
-    const navbar = createElementWithAttributes('div', { class: 'navbar' });
+    const navbar = createElementWithAttributes('div', { class: 'navbar', id:'navbar'});
 
     // Create the logo-and-name div and its child elements
     const logoAndName = createElementWithAttributes('div', { class: 'logo-and-name' });
@@ -21,7 +21,7 @@ function createNavbar() {
     logoAndName.appendChild(logoLabel);
 
     // Create the nav-items-container div and its child elements
-    const navItemsContainer = createElementWithAttributes('div', { class: 'nav-items-container' });
+    const navItemsContainer = createElementWithAttributes('div', { class: 'nav-items-container' , id:'nav-items-container'});
     const homeLink = createElementWithAttributes('a', { href: '/', class: 'home-label' });
     homeLink.textContent = 'Home';
     const workoutLink = createElementWithAttributes('a', { href: '/workout.html', class: 'workout-label' });
@@ -40,10 +40,46 @@ function createNavbar() {
     profileLabelContainer.appendChild(profileIcon);
     profileLabelContainer.appendChild(profileLink);
 
+    var menuButton = document.createElement('button')
+    menuButton.classList.add('menu-button')
+
+    var menuButtonImg = document.createElement('img')
+    menuButtonImg.src = 'resources/menuIcon.png'
+    menuButtonImg.style.height = '20px'
+    menuButton.appendChild(menuButtonImg)
+
+    menuButton.addEventListener('click', () => {
+      const verticalNav = document.getElementById('vertical-nav-items-container');
+      verticalNav.classList.toggle('active');
+    });
+
     // Append all elements to the navbar
     navbar.appendChild(logoAndName);
     navbar.appendChild(navItemsContainer);
     navbar.appendChild(profileLabelContainer);
+    navbar.appendChild(menuButton);
 
     return navbar; // Return the root element of the component
+  }
+
+
+function createNavbarVertical() {
+
+    // Create the nav-items-container div and its child elements
+    const navItemsContainerVertical = createElementWithAttributes('div', { class: 'vertical-nav-items-container' , id:'vertical-nav-items-container'});
+    const homeLink = createElementWithAttributes('a', { href: '/', class: 'home-label' });
+    homeLink.textContent = 'Home';
+    const workoutLink = createElementWithAttributes('a', { href: '/workout.html', class: 'workout-label' });
+    workoutLink.textContent = 'Workout';
+    const dataLink = createElementWithAttributes('a', { href: '/data.html', class: 'data-label' });
+    dataLink.textContent = 'Data';
+    const profileLink = createElementWithAttributes('a', { href: '/profile.html', class: 'profile-label' });
+    profileLink.textContent = 'Profile';
+
+    navItemsContainerVertical.appendChild(homeLink);
+    navItemsContainerVertical.appendChild(workoutLink);
+    navItemsContainerVertical.appendChild(dataLink);
+    navItemsContainerVertical.appendChild(profileLink);
+
+    return navItemsContainerVertical; // Return the root element of the component
   }
