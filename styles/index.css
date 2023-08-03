@@ -52,10 +52,10 @@ a{
     transform-origin: bottom center; }
 
 .bubble1{
-    width: clamp(120px, 25vw,320px);
-    height: clamp(120px, 25vw,320px);
+    width: clamp(100px, 20vw,320px);
+    height: clamp(100px, 20vw,320px);
     left: 10vw;
-    bottom: clamp(220px, 20vw, 300px);
+    bottom: clamp(250px, 20vw, 300px);
     /* top: clamp(10vh, 20); */
     box-shadow: 10px 0 20px rgba(44, 118, 95, 1);
 }
@@ -73,7 +73,7 @@ a{
 .bubble3{
     width: clamp(200px, 30vw,400px);
     height: clamp(200px, 30vw,400px);
-    bottom: 2.2vh;
+    bottom: 5vh;
     box-shadow: 0 10px 20px rgba(44, 118, 95, 1);
 }
 
@@ -103,5 +103,29 @@ a{
 
 .get-started-button:hover{
     background-color: var(--button-color-active);
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+}
+
+@media (max-width:400px) {
+    .bubble1{
+        bottom: 60vh;
+        height: 150px;
+        width: 150px;
+        left: 3vw;
+    }
+
+    .bubble2{
+        bottom: 55vh;
+        height: 140px;
+        width: 140px;
+        right: 3vw;
+    }
+
+    .bubble3{
+        bottom: 40px;
+    }
+
+    .get-started-button{
+        top: 50vh;
+    }
 }
