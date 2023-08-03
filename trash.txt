@@ -1,0 +1,88 @@
+navbar in html
+
+    <div class="navbar">
+        <div class="logo-and-name">
+            <img class="logo-img" src="resources/dumbellLogo.png" alt="logo" style="width: 25px;">
+            <label class="logo-label">GymSense</label>
+        </div>
+
+        <div class="nav-items-container">
+            <a href="/" class="home-label">Home</a>
+            <a href="/workout.html" class="workout-label">Workout</a>
+            <a href="/data.html" class="data-label">Data</a>
+
+        </div>
+
+        <div class="profile-label-contianer">
+            <img class="profile-icon" src="resources/profileIcon.jpg" alt="profile-icon" style="width: 25px;">
+            <a href="/profile.html" class="profile-label">Profile</a>
+        </div>
+    </div>
+
+###################################
+
+feature bubbles styling
+.feature-bubble-image-div-horizontal{
+    height: 100%;
+    width: 60%;
+    object-fit: cover;
+}
+
+.feature-bubble-label-horizontal{
+    width: 50px;
+    margin-left: 4%;
+    padding: 10px;
+    line-height: 1.7;
+    font-size: 20px;
+}
+
+
+
+.feature-bubble-div-vertical{
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+    height: 22vw;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: var(--feature-bubble-background);
+    position: absolute;
+}
+
+.feature-bubble-image-div-vertical{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 30%;
+}
+
+.feature-bubble-label-vertical{
+    /* width: 50px; */
+    margin-top: 12%;
+    padding: 10px;
+    line-height: 1.7;
+    font-size: 25px;
+    flex:1;
+}
+
+.feature-bubble-image{
+    width: 100%;
+    height: 100%;
+}
+
+.green-word{
+    color: var(--label-color);
+    text-align: center;
+    font-weight: 900;
+    /* font-size: 2.1rem; */
+}
+###################################
+
+feature bibble html
+            <!-- <h3 class="feature-bubble-label-horizontal">Track <span class="green-word">Your</span> weights</h3>
+            <div class="feature-bubble-image-div-horizontal">
+                <img class="feature-bubble-image" src="resources/weight.jpg" alt="feature-image">
+            </div> -->
