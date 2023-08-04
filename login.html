@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/index.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="scripts/navbar.js"></script>
+    <link rel="stylesheet" href="styles/hamburger.css">
 </head>
 <body>
 
@@ -22,34 +23,11 @@
             document.getElementById('background-image-div').appendChild(createNavbarVertical())
             document.getElementById('background-image-div').addEventListener('click', function(){
                 const verticalNav = document.getElementById('vertical-nav-items-container');
-                verticalNav.classList.remove('active');
+                verticalNav.classList.toggle('active');
             })
-
-
         </script>
 
-        <div class="feature-bubble-div bubble1">
-            <img class="feature-bubble-image" src="resources/featureBubble1.png  " alt="feature-image">
-
-        </div>
-
-        <div class="feature-bubble-div bubble2">
-            <img class="feature-bubble-image" src="resources/featureBubble2.png  " alt="feature-image">
-        </div>
-
-        <div class="feature-bubble-div bubble3">
-            <img class="feature-bubble-image" src="resources/featureBubble3.png  " alt="feature-image">
-        </div>
-        <button id="get-started-button" class="get-started-button">
-            <img class="get-started-button-image" src="resources/getStartedButton.png" alt="">
-        </button>
     </div>
-
-    <script>
-        document.getElementById("get-started-button").onclick = function () {
-                location.href = "login.html";
-            }
-    </script>
 
 
 </body>

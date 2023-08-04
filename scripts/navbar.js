@@ -51,6 +51,11 @@ function createNavbar() {
     menuButton.addEventListener('click', () => {
       const verticalNav = document.getElementById('vertical-nav-items-container');
       verticalNav.classList.toggle('active');
+      if (menuButtonImg.src.includes('menuIcon.png')) {
+        menuButtonImg.src = 'resources/xIcon.png';
+      } else {
+        menuButtonImg.src = 'resources/menuIcon.png';
+      }
     });
 
     // Append all elements to the navbar
