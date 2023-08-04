@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymSense</title>
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/home.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="scripts/navbar.js"></script>
 </head>
@@ -24,34 +26,33 @@
                 const verticalNav = document.getElementById('vertical-nav-items-container');
                 verticalNav.classList.remove('active');
                 document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
-
             })
-
-
         </script>
 
-        <div class="feature-bubble-div bubble1">
-            <img class="feature-bubble-image" src="resources/featureBubble1.png  " alt="feature-image">
+
+        <div class="home-buttons-container">
+            <h3>Welcome To <span style="color: var(--button-color-active); font-size: 22px;">G</span>ym<span style="color: var(--button-color-active); font-size: 22px;">S</span>ense</h3>
+            <button>
+                <img class="button-image" src="resources/workoutIcon.png" alt="">
+                Start Workout
+            </button>
+            <button>
+                <img class="button-image" src="resources/planIcon.png" alt="">
+                Manage Your Plans
+            </button>
+            <button>
+                <img class="button-image" src="resources/progressICon.png" alt="">
+                See Your Progress
+            </button>
+            <button>
+                <img class="button-image" src="resources/profileIcon.jpg" alt="">
+                Manage Your Profile
+            </button>
+        </div>
 
         </div>
 
-        <div class="feature-bubble-div bubble2">
-            <img class="feature-bubble-image" src="resources/featureBubble2.png  " alt="feature-image">
-        </div>
-
-        <div class="feature-bubble-div bubble3">
-            <img class="feature-bubble-image" src="resources/featureBubble3.png  " alt="feature-image">
-        </div>
-        <button id="get-started-button" class="get-started-button">
-            <img class="get-started-button-image" src="resources/getStartedButton.png" alt="">
-        </button>
     </div>
-
-    <script>
-        document.getElementById("get-started-button").onclick = function () {
-                location.href = "login.html";
-            }
-    </script>
 
 
 </body>

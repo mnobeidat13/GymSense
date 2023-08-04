@@ -1,0 +1,49 @@
+.home-buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(33, 41, 38, 0.9);
+    padding: 10px 10px 50px 10px;
+    border-radius: 25px;
+    position: absolute;
+    width: clamp(290px, 80vw, 400px)
+}
+
+.home-buttons-container > h3{
+    border-bottom: 3px solid var(--button-color-active);
+    padding: 10px 20px;
+    border-radius: 5pc;
+}
+
+.button-image{
+    width: clamp(20px, 5vw, 40px);
+    width: clamp(20px, 5vw, 40px);
+    border-radius: 50%;
+    border: 2px solid;
+    padding: clamp(1px, 1vw, 5px);
+}
+
+.home-buttons-container > button{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+    width: clamp(200px, 90%, 350px);
+    padding: 7px 40px;
+    font-size: clamp(10px, 4vw, 20px);
+    background-color: var(--button-color-inactive);
+    color: white;
+    border: 0;
+    border-radius: 5pc;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-buttons-container > button:hover{
+    background-color: var(--button-color-active);
+}
+
+.home-buttons-container > button:active{
+    transform: scale(1.05);
+}

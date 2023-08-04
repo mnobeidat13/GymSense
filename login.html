@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymSense</title>
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/index.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="scripts/navbar.js"></script>
-    <link rel="stylesheet" href="styles/hamburger.css">
 </head>
 <body>
 
@@ -23,11 +23,102 @@
             document.getElementById('background-image-div').appendChild(createNavbarVertical())
             document.getElementById('background-image-div').addEventListener('click', function(){
                 const verticalNav = document.getElementById('vertical-nav-items-container');
-                verticalNav.classList.toggle('active');
+                verticalNav.classList.remove('active');
+                document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
+
             })
         </script>
 
+        <div class="login-div-container">
+            <div class="logo-and-name">
+                <img class="logo-img" src="resources/dumbellLogo.png" alt="logo" style="width: 25px;">
+                <label class="logo-label">GymSense</label>
+            </div>
+
+            <!-- <h3>Welcome to GymSense</h3> -->
+
+            <div class="login-tab-container">
+                <button id="login-tab-button" class="active">Log In</button>
+                <button id="signup-tab-button">Sign Up</button>
+            </div>
+
+            <form class="login-form" id="login-form" action="">
+                <div class="username-div">
+                    <h4>Username</h4>
+                    <input type="email" name="username" class="username-input">
+                </div>
+                <div class="password-div">
+                    <h4>Password</h4>
+                    <input type="password" name="password" class="password-input">
+                </div>
+
+                <div class="forgot-password-div">
+                    <input type="checkbox" name="remember-me" id="remember-me">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+
+                <input type="submit" value="Log In">
+            </form>
+
+            <form  class="signup-form" id="signup-form" action="location.href">
+                <div class="username-div">
+                    <h4>Username</h4>
+                    <input type="email" name="username" id="username-input">
+                </div>
+                <div class="password-div">
+                    <h4>Password</h4>
+                    <input type="password" name="password" id="password-input">
+                </div>
+
+                <div class="password-div">
+                    <h4>Confirm Password</h4>
+                    <input type="password" name="password" id="password-input">
+                </div>
+
+                <input type="submit" value="Sign Up">
+
+            </form>
+        </div>
+
     </div>
+
+    <script>
+
+        document.getElementById('login-form').classList.add('active')
+
+        const loginTabButton = document.getElementById('login-tab-button');
+        const signupTabButton = document.getElementById('signup-tab-button');
+
+        loginTabButton.addEventListener('click', toggleTab);
+        signupTabButton.addEventListener('click', toggleTab);
+
+        function toggleTab(event) {
+            // Remove 'active' class from all buttons
+            loginTabButton.classList.remove('active');
+            signupTabButton.classList.remove('active');
+
+            // Add 'active' class to the clicked button
+            event.target.classList.add('active');
+
+            if(event.target.id == 'login-tab-button'){
+                document.getElementById('login-form').classList.add('active')
+                document.getElementById('signup-form').classList.remove('active')
+
+            }
+
+            if(event.target.id == 'signup-tab-button'){
+                document.getElementById('login-form').classList.remove('active')
+                document.getElementById('signup-form').classList.add('active')
+
+            }
+        }
+
+        const myForm = document.getElementById('login-form');
+        myForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            window.location.href = 'home.html'; // Change 'new-page.html' to the desired URL
+        });
+    </script>
 
 
 </body>

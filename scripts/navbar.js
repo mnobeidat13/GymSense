@@ -44,6 +44,7 @@ function createNavbar() {
     menuButton.classList.add('menu-button')
 
     var menuButtonImg = document.createElement('img')
+    menuButtonImg.id = 'menu-button-image'
     menuButtonImg.src = 'resources/menuIcon.png'
     menuButtonImg.style.height = '20px'
     menuButton.appendChild(menuButtonImg)
