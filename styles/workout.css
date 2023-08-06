@@ -92,7 +92,7 @@
     border-bottom-left-radius: 4pc;
 }
 
-@media (max-width:400px) {
+@media (max-width:600px) {
 
     .workouts-div1{
         flex-direction: column;
