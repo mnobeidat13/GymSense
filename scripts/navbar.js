@@ -24,9 +24,9 @@ function createNavbar() {
     const navItemsContainer = createElementWithAttributes('div', { class: 'nav-items-container' , id:'nav-items-container'});
     const homeLink = createElementWithAttributes('a', { href: '/', class: 'home-label' });
     homeLink.textContent = 'Home';
-    const workoutLink = createElementWithAttributes('a', { href: '/workout.html', class: 'workout-label' });
+    const workoutLink = createElementWithAttributes('a', { href: './workout.html', class: 'workout-label' });
     workoutLink.textContent = 'Workout';
-    const dataLink = createElementWithAttributes('a', { href: '/data.html', class: 'data-label' });
+    const dataLink = createElementWithAttributes('a', { href: './data.html', class: 'data-label' });
     dataLink.textContent = 'Data';
     navItemsContainer.appendChild(homeLink);
     navItemsContainer.appendChild(workoutLink);
@@ -35,7 +35,7 @@ function createNavbar() {
     // Create the profile-label-container div and its child elements
     const profileLabelContainer = createElementWithAttributes('div', { class: 'profile-label-contianer' });
     const profileIcon = createElementWithAttributes('img', { class: 'profile-icon', src: 'resources/profileIcon.jpg', alt: 'profile-icon', style: 'width: 25px;' });
-    const profileLink = createElementWithAttributes('a', { href: '/profile.html', class: 'profile-label' });
+    const profileLink = createElementWithAttributes('a', { href: './profile.html', class: 'profile-label' });
     profileLink.textContent = 'Profile';
     profileLabelContainer.appendChild(profileIcon);
     profileLabelContainer.appendChild(profileLink);
@@ -75,11 +75,11 @@ function createNavbarVertical() {
     const navItemsContainerVertical = createElementWithAttributes('div', { class: 'vertical-nav-items-container' , id:'vertical-nav-items-container'});
     const homeLink = createElementWithAttributes('a', { href: '/', class: 'home-label' });
     homeLink.textContent = 'Home';
-    const workoutLink = createElementWithAttributes('a', { href: '/workout.html', class: 'workout-label' });
+    const workoutLink = createElementWithAttributes('a', { href: './workout.html', class: 'workout-label' });
     workoutLink.textContent = 'Workout';
-    const dataLink = createElementWithAttributes('a', { href: '/data.html', class: 'data-label' });
+    const dataLink = createElementWithAttributes('a', { href: './data.html', class: 'data-label' });
     dataLink.textContent = 'Data';
-    const profileLink = createElementWithAttributes('a', { href: '/profile.html', class: 'profile-label' });
+    const profileLink = createElementWithAttributes('a', { href: './profile.html', class: 'profile-label' });
     profileLink.textContent = 'Profile';
 
     navItemsContainerVertical.appendChild(homeLink);
