@@ -65,7 +65,7 @@ a{
     height: clamp(150px, 25vw,350px);
     right: 10vw;
     bottom: 100px;
-    bottom: clamp(300px, 10vw, 350px);
+    bottom: clamp(250px, 10vw, 300px);
     box-shadow: 10px 0 20px rgba(44, 118, 95, 1);
 
 }

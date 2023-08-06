@@ -12,18 +12,7 @@
     max-width: 350px;
 }
 
-.logo-and-name{
-    color: var(--label-color);
-    font-weight: bold;
-    font-size: large;
-    display: flex;
-    gap: 5px;
-    border-bottom: 3px solid;
-    padding: 5px 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-bottom: 15px;
-}
+
 
 .login-tab-container{
     display: flex;

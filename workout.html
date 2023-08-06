@@ -7,9 +7,11 @@
     <title>GymSense</title>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/workout.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="scripts/navbar.js"></script>
-    <link rel="stylesheet" href="styles/hamburger.css">
+    <script src="scripts/smallWorkoutCard.js"></script>
+    <script src="scripts/workoutSetCard.js"></script>
 </head>
 <body>
 
@@ -23,13 +25,87 @@
             document.getElementById('background-image-div').appendChild(createNavbarVertical())
             document.getElementById('background-image-div').addEventListener('click', function(){
                 const verticalNav = document.getElementById('vertical-nav-items-container');
-                verticalNav.classList.toggle('active');
+                verticalNav.classList.remove('active');
                 document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
-
             })
         </script>
 
+
+        <div class="workouts-div1">
+            <div class="workouts-div2" id="single-workouts-div-main">
+                <h3 class="collapsible" id="single-workouts-div-header" >Choose A Single Workout</h3>
+                <!-- <hr style="width: 90%; margin: 10px;"> -->
+                <div class="workouts-div3" id="single-workouts-div">
+                    <script>
+                        const singleWorkoutDiv = document.getElementById('single-workouts-div'); // Replace with the actual container element
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/benchPress.gif', 'Bench Press', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/inclineDumbbellPress.gif', 'Incline Dumbbell Press', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/chestPress.gif', 'Chest Press', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/shoulderPress.gif', 'Shoulder Press', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/lateralRaise.gif', 'Lateral Raise', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/tricepsPushdown.gif', 'Triceps Rope Pushdown', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/barbellTriceps.gif', 'Triceps Barbell', 4, 12));
+
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/latPulldown.gif', 'Lats Pulldown', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/seatedCableRow.gif', 'Cable Row', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/machinePullover.gif', 'Machine Pullover', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/barPreacher.gif', 'Bar Preacher', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/cableHammerCurls.gif', 'Cable Hammer Curl', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/seatdRowing.gif', 'Seatd Rowing', 4, 12));
+
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/legPress.gif', 'Leg Press', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/legCurl.gif', 'Leg Curl', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/legExtension.gif', 'Leg Extension', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/calfPress.gif', 'Calf Press', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/hipThrust.gif', 'Hip Thrust', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/cableTwist.gif', 'Cable Twist', 4, 12));
+                        singleWorkoutDiv.appendChild(createSmallWorkoutCard('resources/declineSetup.gif', 'Decline Set-up', 4, 12));
+                    </script>
+                </div>
+            </div>
+
+            <div class="workouts-div2" id="set-workouts-div-main">
+                <h3 class="collapsible" id="set-workouts-div-header">
+                    Choose A Workout Set</h3>
+                <!-- <hr style="width: 90%; margin: 10px;"> -->
+                <div class="workouts-div3" id="set-workouts-div">
+                    <script>
+                        const workoutSetDiv = document.getElementById('set-workouts-div'); // Replace with the actual container element
+
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Chest/ Biceps'));
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Incline Dumbbell Press'));
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Chest Press'));
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Shoulder Press'));
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Lateral Raise'));
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Triceps Rope Pushdown'));
+                        workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Triceps Barbell'));
+
+                    </script>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <script>
+        const screenWidth = window.innerWidth;
+        if(screenWidth<400){
+            document.getElementById('single-workouts-div-main').classList.add('collapsed')
+            document.getElementById('set-workouts-div-main').classList.add('collapsed')
+            document.getElementById('set-workouts-div-header').classList.add('collapsed')
+            document.getElementById('single-workouts-div-header').classList.add('collapsed')
+
+        }
+
+        document.getElementById('single-workouts-div-header').addEventListener('click', function(event){
+            event.target.classList.toggle('collapsed')
+            document.getElementById('single-workouts-div-main').classList.toggle('collapsed')
+        })
+
+        document.getElementById('set-workouts-div-header').addEventListener('click', function(event){
+            event.target.classList.toggle('collapsed')
+            document.getElementById('set-workouts-div-main').classList.toggle('collapsed')
+        })
+    </script>
 
 
 </body>
