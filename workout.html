@@ -12,6 +12,8 @@
     <script src="scripts/navbar.js"></script>
     <script src="scripts/smallWorkoutCard.js"></script>
     <script src="scripts/workoutSetCard.js"></script>
+    <script src="scripts/exerciseCard.js" type="module" ></script>
+    <script src="scripts/mock.js"></script>
 </head>
 <body>
 
@@ -80,10 +82,23 @@
                         workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Triceps Rope Pushdown'));
                         workoutSetDiv.appendChild(createWorkoutSetCard('resources/exerciseIcon.png', 'Upper Body', 'Triceps Barbell'));
 
+                        const queryParams = new URLSearchParams(window.location.search);
+            const parameter1 = queryParams.get('numberOfReps');
+
+            document.getElementById('background-image-div').appendChild(
+                createExerciseCard(queryParams.get('imageSrc'),
+                             queryParams.get('workoutName'),
+                             queryParams.get('numberOfSets'),
+                             queryParams.get('numberOfReps'))
+            )
                     </script>
                 </div>
             </div>
         </div>
+
+        <script>
+            document.body.appendChild(mock())
+        </script>
 
     </div>
     <script>

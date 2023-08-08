@@ -56,7 +56,6 @@
     display: none;
   }
 
-
 .small-workout-card{
     display: flex;
     flex-direction: column;
@@ -90,6 +89,7 @@
     margin: 5px 0px;
     border-radius: 3pc;
     border-bottom-left-radius: 4pc;
+    box-shadow: 2px 2px 5px 2px;
 }
 
 @media (max-width:600px) {

@@ -4,6 +4,18 @@ function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numberOfRep
 
     cardDiv.addEventListener('click', function(event){
         cardDiv.classList.toggle('selected')
+
+        const data = {
+            imageSrc: imageSrc,
+            workoutName: workoutName,
+            numberOfSets: numberOfSets,
+            numberOfReps: numberOfReps
+        };
+
+        const queryParams = new URLSearchParams(data).toString();
+        const nextPageURL = `singleWorkout.html?${queryParams}`;
+
+        window.location.href = nextPageURL;
     })
 
     const image = document.createElement('img');

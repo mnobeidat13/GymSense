@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymSense</title>
     <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/workout.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="scripts/navbar.js"></script>
+    <script src="scripts/smallWorkoutCard.js"></script>
+    <script src="scripts/workoutSetCard.js"></script>
+    <script src="scripts/exerciseCard.js" type="module"></script>
 </head>
 <body>
 
@@ -29,31 +31,25 @@
             })
         </script>
 
+        <script>
+            const queryParams = new URLSearchParams(window.location.search);
+            const parameter1 = queryParams.get('numberOfReps');
 
-        <div class="home-buttons-container">
-            <h3>Welcome To <span style="color: var(--button-color-active); font-size: 22px;">G</span>ym<span style="color: var(--button-color-active); font-size: 22px;">S</span>ense</h3>
-            <button onclick="location.href = 'workout.html'">
-                <img class="button-image" src="resources/workoutIcon.png" alt="">
-                Start Workout
-            </button>
-            <button>
-                <img class="button-image" src="resources/planIcon.png" alt="">
-                Edit Your Workouts
-            </button>
-            <button>
-                <img class="button-image" src="resources/progressICon.png" alt="">
-                See Your Progress
-            </button>
-            <button>
-                <img class="button-image" src="resources/profileIcon.jpg" alt="">
-                Manage Your Profile
-            </button>
-        </div>
+            window.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('background-image-div').appendChild(
+                ExerciseCard(queryParams.get('imageSrc'),
+                             queryParams.get('workoutName'),
+                             queryParams.get('numberOfSets'),
+                             queryParams.get('numberOfReps'))
+            )
+            });
 
-        </div>
+
+
+        </script>
+
 
     </div>
-
 
 </body>
 </html>

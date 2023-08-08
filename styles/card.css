@@ -1,0 +1,124 @@
+.exerciseCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  padding-bottom: 0px;
+  box-shadow: 0 0px 12px 3px var(--box-shadow-color);
+  width: 250px;
+  border-radius: 2pc;
+  background-color: var(--header-bg-color);
+  margin: 0 10px;
+  background-color: rgba(16, 40, 32, 0.944);
+  /* opacity: 0.85; */
+}
+
+body{
+  
+}
+.exerciseImg {
+  width: 200px;
+  height: 300px;
+  margin-right: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  /* opacity: 0.9; */
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.actionButton{
+  background-color: var(--button-bg-color);
+  color: var(--button-active-color);
+  border: 0;
+  border-radius: 1pc;
+  font-size: 14px;
+  padding: 10px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  transition: transform 0.2s ease-in-out;
+  margin: 10px;
+}
+
+.actionButton:active,
+.fa:active {
+  transform: scale(1.1);
+}
+
+.fa {
+  background-color: rgba(61, 103, 90, 0.6);
+  color: var(--button-active-color);
+  border: 0;
+  width: 30px;
+  height: 25px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.exerciseCard > h2,
+h4 {
+  margin-top: 0;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  color: aliceblue;
+}
+
+.sets,
+.reps {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 4px;
+  width: 60px;
+}
+
+.targetDiv {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.exerciseCard .navButton {
+  background-color: var(--header-bg-color);
+  border: none;
+  color: var(--border-color);
+  border-radius: 5px;
+}
+
+.exerciseCard .navButton:active {
+  background-color: var(--button-bg-color);
+  color: var(--button-active-color);
+}
+
+.checkImage{
+  width:30px;
+  height:auto;
+  border: 3px solid rgb(132, 195, 37);
+  margin-top: 5px;
+  border-radius: 2pc;
+}
+
+.nextResetDiv{
+  margin-left: 10px;
+}
+/*
+.exerciseCard:before,
+.exerciseCard:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: black;
+}
+
+.exerciseCard:before {
+  transform: translateX(-50%);
+}
+
+.exerciseCard:after {
+  transform: translateX(50%);
+} */

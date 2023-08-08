@@ -1,0 +1,51 @@
+.countLabel {
+    margin-bottom: 0;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 0px 2px 2px var(--button-bg-color);
+    border-radius: 5px;
+    padding: 3px 15px;
+    width: 25px;
+}
+
+.counterDiv > * {
+    margin: 0 5px 5px;
+}
+
+
+.weightInput{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-top: 4px;
+    outline: none;
+    text-align: center;
+}
+
+.setLabel{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.innerCounterDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--navigation-bg-color);
+    padding: 5px;
+    border-radius: 2pc;
+}
+
+.mainCounterDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    border: 3px solid var(--border-color);
+    border-radius: 2pc;
+    margin-top: 0px;
+    padding: 8px;
+}
