@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymSense</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/workout.css">
+    <link rel="stylesheet" href="styles/setWorkout.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/counter.css">
+    <script src="scripts/navbar.js"></script>
+    <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
+    <script src="scripts/workoutSetCard.js"></script>
+    <script defer type="module" src="scripts/setWorkout.js"></script>
+</head>
+<body>
+
+    <script>
+        document.body.appendChild(createNavbar())
+    </script>
+
+    <div class="background-image-div" id="background-image-div">
+
+        <script>
+            document.getElementById('background-image-div').appendChild(createNavbarVertical())
+            document.getElementById('background-image-div').addEventListener('click', function(){
+                const verticalNav = document.getElementById('vertical-nav-items-container');
+                verticalNav.classList.remove('active');
+                document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
+            })
+        </script>
+
+        <div class="workout-set-main-div">
+            <div class="workout-set-div">
+                <div class="header-container">
+                    <h3>Upper Boddy Workout: Chest/Biceps</h3>
+                </div>
+                <div id="small-workout-cards-container" class="small-workout-cards-container">
+                    <script>
+                    </script>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="workout-card-container" id="workout-card-container">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

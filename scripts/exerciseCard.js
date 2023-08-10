@@ -2,8 +2,9 @@
 import { Counter } from "./counter.js";
 import { addData } from "./database.js";
 
-// Define a global variable to store the database object
 let db;
+const activeColor = '#3d675ae6';
+const finishedColor = '#499c83';
 
 // Function to initialize the database by setting the global db variable
 export function initializeDatabase(dbObject) {
@@ -11,26 +12,16 @@ export function initializeDatabase(dbObject) {
 }
 
 // Function to create an exercise card element
-function createExerciseCard(imgSrc, title, sets, reps, right = false, left = false) {
-  let resultsLabel;
+export function ExerciseCard(imgSrc, title, sets, reps, options = {}) {
+  const { backBtn = true, right = false, left = false } = options;
 
   // Initialize counter object using the Counter function
   var counter = Counter(sets = 4);
   var length = Object.keys(counter).length;
   var setCounter = 0;
 
-  // Define colors for different states
-  const activeColor = '#3d675ae6';
-  const inactiveColor = '#499c83';
-  const finishedColor = '#499c83';
-
-  // Create a checkmark image element
-  const checkMark = document.createElement('img');
-  checkMark.src = 'resources/checkSign.gif';
-  checkMark.setAttribute('class', 'checkImage');
-
-  // Event listener for the "Next Set" button
-  function nextSetButtonEventListner(event) {
+  // Events Handlers
+  function nextSetButtonEvent(event) {
     // Check if there are more sets remaining
     if (setCounter < length - 1) {
       counter[setCounter].innerCounterDiv.style.backgroundColor = finishedColor;
@@ -47,18 +38,16 @@ function createExerciseCard(imgSrc, title, sets, reps, right = false, left = fal
     }
   }
 
-  // Event listener for the "Start" button
-  function startButtonEventListner() {
+  function startButtonEvent() {
     counter[1].innerCounterDiv.style.backgroundColor = activeColor;
     setCounter += 1;
-    exerciseCard.removeChild(start);
+    exerciseCard.removeChild(startButton);
     exerciseCard.appendChild(counter.counterDiv);
     exerciseCard.appendChild(nextSetButton);
     counter[1].weightInput.focus();
   }
 
-  // Event listener for the "Finish" button
-  function finishButtonEventListner() {
+  function finishButtonEvent() {
     exerciseCard.appendChild(checkMark);
     exerciseCard.appendChild(nextResetDiv);
     exerciseCard.removeChild(this);
@@ -82,10 +71,11 @@ function createExerciseCard(imgSrc, title, sets, reps, right = false, left = fal
     addData(db, dataItem);
   }
 
-  // Event listener for the "Reset" button
-  function resetButtonEventListner() {
+  function resetButtonEvent() {
     exerciseCard.removeChild(counter.counterDiv);
     exerciseCard.removeChild(nextResetDiv);
+    exerciseCard.removeChild(checkMark);
+
     counter = Counter(sets = 4);
     exerciseCard.appendChild(counter.counterDiv);
     exerciseCard.appendChild(nextSetButton);
@@ -93,114 +83,115 @@ function createExerciseCard(imgSrc, title, sets, reps, right = false, left = fal
     counter[1].weightInput.focus();
   }
 
-  // Create elements for image and navigation buttons
-  var imgContainer = document.createElement('div');
-  imgContainer.style.position = 'relative';
+  // Creating Elements
+  function createImageContainer(src) {
+    const container = document.createElement('div');
+    container.style.position = 'relative';
 
-  var exerciseImg = document.createElement('img');
-  exerciseImg.classList.add('exerciseImg');
-  exerciseImg.src = imgSrc;
+    const exerciseImg = document.createElement('img');
+    exerciseImg.classList.add('exerciseImg');
+    exerciseImg.src = src;
 
-  var forward = document.createElement('button');
-  forward.innerHTML = "<i class='far fa-arrow-alt-circle-right'></i>";
-  forward.classList.add('navButton');
-  forward.style.cssText = 'position: absolute; right: -25px; bottom: 25px;';
-  forward.addEventListener('click', function() {
-    cardsContainer.scroll({
-      left: cardsContainer.scrollLeft + exerciseCard.offsetWidth,
-      behavior: 'smooth'
-    });
-  });
+    container.appendChild(exerciseImg);
 
-  var backward = document.createElement('button');
-  backward.innerHTML = "<i class='far fa-arrow-alt-circle-left'></i>";
-  backward.classList.add('navButton');
-  backward.style.cssText = 'position: absolute; left: -25px; bottom: 25px;';
-  backward.addEventListener('click', function() {
-    cardsContainer.scroll({
-      left: cardsContainer.scrollLeft - exerciseCard.offsetWidth,
-      behavior: 'smooth'
-    });
-  });
-
-  imgContainer.appendChild(exerciseImg);
-  if (left) {
-    imgContainer.appendChild(forward);
-  }
-  if (right) {
-    imgContainer.appendChild(backward);
+    return container;
   }
 
-  // Create exercise card element and its components
-  var exerciseCard = document.createElement('div');
-  exerciseCard.classList.add('exerciseCard');
+  function createTitleHeader(title) {
+    const header = document.createElement('h2');
+    header.textContent = title;
+    return header;
+  }
 
-  var titleH = document.createElement('h2');
-  titleH.textContent = title;
+  function createHeaderText(text) {
+    const header = document.createElement('h4');
+    header.textContent = text;
+    header.classList.add('sets', 'reps');
+    return header;
+  }
 
-  var targetDiv = document.createElement('div');
-  targetDiv.classList.add('targetDiv');
+  function createTargetDiv(sets, reps) {
+    const div = document.createElement('div');
+    div.classList.add('targetDiv');
 
-  var nSets = document.createElement('h4');
-  nSets.textContent = sets + ' Sets';
-  nSets.classList.add('sets');
+    const nSets = createHeaderText(sets + ' Sets');
+    const nReps = createHeaderText(reps + ' Reps');
 
-  var nReps = document.createElement('h4');
-  nReps.textContent = reps + ' Reps';
-  nReps.classList.add('reps');
+    div.appendChild(nSets);
+    div.appendChild(nReps);
 
-  targetDiv.appendChild(nSets);
-  targetDiv.appendChild(nReps);
+    return div;
+  }
 
-  // Create start button and attach event listener
-  var start = document.createElement('button');
-  start.textContent = 'Start';
-  start.classList.add('actionButton');
-  start.addEventListener('click', startButtonEventListner);
-
-  // Create next set button and attach event listener
-  var nextSetButton = document.createElement('button');
-  nextSetButton.textContent = 'Next Set';
-  nextSetButton.classList.add('actionButton');
-  nextSetButton.addEventListener('click', nextSetButtonEventListner);
-
-  // Create finish button and attach event listener
-  var finishButton = document.createElement('button');
-  finishButton.textContent = 'Finish!';
-  finishButton.classList.add('actionButton');
-  finishButton.addEventListener('click', finishButtonEventListner);
-
-  // Create reset button and attach event listener
-  var resetButton = document.createElement('button');
-  resetButton.classList.add('actionButton');
-  resetButton.textContent = 'Reset';
-  resetButton.addEventListener('click', resetButtonEventListner);
+  function createActionButton(text, onClick) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.classList.add('actionButton');
+    button.addEventListener('click', onClick);
+    return button;
+  }
 
   // Create next workout button
-  var nextWorkoutButton = document.createElement('button');
-  nextWorkoutButton.innerHTML = "Next <i class='fas fa-angle-double-right'></i>";
-  nextWorkoutButton.classList.add('actionButton');
-  nextWorkoutButton.style.cssText = 'textAlign:left; paddingLeft:10px';
-  nextWorkoutButton.addEventListener('click', function() {
-    cardsContainer.scroll({
-      left: cardsContainer.scrollLeft + exerciseCard.offsetWidth,
-      behavior: 'smooth'
+  function createBackButton() {
+    const backButton = document.createElement('button');
+    backButton.innerHTML = "Back <i class='fas fa-angle-double-right'></i>";
+    backButton.classList.add('actionButton');
+    backButton.style.cssText = 'textAlign:left; paddingLeft:10px';
+    backButton.addEventListener('click', function() {
+      if (window.location.pathname == '/singleWorkout.html') {
+        history.back();
+      }
+      if (window.innerWidth <= 600) {
+        document.getElementById('workout-card-container').style.display = 'none';
+      }
     });
-  });
+    return backButton;
+  }
+
+  function createCloseButton() {
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'X';
+    closeButton.id = 'card-container-close-button';
+    closeButton.addEventListener('click', function() {
+      document.getElementById('workout-card-container').style.display = 'none';
+    });
+    return closeButton;
+  }
+
+  // Create a checkmark image element
+  const checkMark = document.createElement('img');
+  checkMark.src = 'resources/checkSign.gif';
+  checkMark.setAttribute('class', 'checkImage');
+
+  // Using defined Functions to create elements
+  const imgContainer = createImageContainer(imgSrc, { left, right });
+  const titleH = createTitleHeader(title);
+  const targetDiv = createTargetDiv(sets, reps);
+  var startButton = createActionButton('Start', startButtonEvent);
+  var nextSetButton = createActionButton('Next Set', nextSetButtonEvent)
+  var finishButton = createActionButton('Finish!', finishButtonEvent)
+  var resetButton = createActionButton('Reset', resetButtonEvent)
+  var backButton = createBackButton()
 
   // Create div for next/reset buttons
   var nextResetDiv = document.createElement('div');
   nextResetDiv.classList.add('nextResetDiv');
   nextResetDiv.appendChild(resetButton);
-  nextResetDiv.appendChild(nextWorkoutButton);
+  if(backBtn  || window.innerWidth <= 600){nextResetDiv.appendChild(backButton)}
 
-  //Add exercise card components to the exercise card element
 
+  // Create exercise card element and its components
+  var exerciseCard = document.createElement('div');
+  exerciseCard.classList.add('exerciseCard');
+
+  if (window.innerWidth <= 600 && window.location.pathname == '/setWorkout.html') {
+    const closeButton = createCloseButton();
+    exerciseCard.appendChild(closeButton);
+  }
   exerciseCard.appendChild(imgContainer);
   exerciseCard.appendChild(titleH);
   exerciseCard.appendChild(targetDiv);
-  exerciseCard.appendChild(start);
+  exerciseCard.appendChild(startButton);
 
-  // Return the exercise card element
   return exerciseCard;
 }

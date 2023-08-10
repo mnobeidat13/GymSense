@@ -3,15 +3,6 @@
     --label-color: #2c765f;
     --button-color-inactive:rgba(33, 79, 64, 0.9);
     --button-color-active:rgba(50, 149, 116, 0.9);
-    --main-bg-color: rgba(242, 245, 248, 0.5);
-    --header-bg-color: #fff;
-    --navigation-bg-color: #457d761a;
-    --button-bg-color: #3d675ae6;
-    --button-active-color: #fff;
-    --border-color: rgba(61, 103, 90, 0.9);
-    --text-color: rgba(255, 255, 255, 1);
-    --box-shadow-color: #00000033;
-    --border-neon-effect: neonEffect 3s ease-in-out infinite alternate;
 }
 
 html, body {

@@ -4,6 +4,7 @@ function createWorkoutSetCard(imageSrc, mainTarget, muscles) {
 
     cardDiv.addEventListener('click', function(event){
         cardDiv.classList.toggle('selected')
+        window.location.href = 'setWorkout.html'
     })
 
     const image = document.createElement('img');

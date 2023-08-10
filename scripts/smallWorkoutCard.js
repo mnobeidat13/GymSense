@@ -1,21 +1,44 @@
-function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numberOfReps) {
+import { ExerciseCard } from "./exerciseCard.js";
+
+
+export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numberOfReps) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('small-workout-card');
 
     cardDiv.addEventListener('click', function(event){
-        cardDiv.classList.toggle('selected')
+        // cardDiv.classList.toggle('selected')
 
-        const data = {
-            imageSrc: imageSrc,
-            workoutName: workoutName,
-            numberOfSets: numberOfSets,
-            numberOfReps: numberOfReps
-        };
+        if(window.location.pathname == '/workout.html'){
+            const data = {
+                imageSrc: imageSrc,
+                workoutName: workoutName,
+                numberOfSets: numberOfSets,
+                numberOfReps: numberOfReps
+            };
 
-        const queryParams = new URLSearchParams(data).toString();
-        const nextPageURL = `singleWorkout.html?${queryParams}`;
+            const queryParams = new URLSearchParams(data).toString();
+            const nextPageURL = `singleWorkout.html?${queryParams}`;
 
-        window.location.href = nextPageURL;
+            window.location.href = nextPageURL;
+        }
+
+        if(window.location.pathname == '/setWorkout.html'){
+            var container = document.getElementById('workout-card-container')
+
+            const closeButton = document.getElementById('card-container-close-button');
+            console.log(closeButton);
+            for (let child of container.children) {
+            if (child !== closeButton) {
+                container.removeChild(child);
+                console.log(child.className)
+            }
+            }
+
+            container.appendChild(
+                ExerciseCard(imageSrc, workoutName, numberOfSets, numberOfReps, false)
+            )
+            container.style.display = 'flex'
+        }
     })
 
     const image = document.createElement('img');

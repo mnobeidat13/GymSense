@@ -1,0 +1,123 @@
+.workout-set-main-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--feature-bubble-background);
+    padding: 10px 50px;
+    margin: 10px;
+    border-radius: 25px;
+}
+
+.header-container > h3{
+    display: inline-flex;
+    justify-content: space-around;
+    background-color: var(--button-color-active);
+    border-radius: 1pc;
+    padding: 15px 20px;
+    width: auto;
+    font-size: clamp(11px, 3vw, 22px);
+}
+
+.workout-set-div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 70%;
+}
+
+hr{
+    width: 5px;
+    background-color: rgba(0, 0, 0, 0.471);
+    border: 0;
+    border-radius: 5pc;
+}
+
+.small-workout-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* width: 50%; */
+    /* gap: 80px; */
+    padding: 20px 20px;
+    overflow: auto;
+    scrollbar-width: none;
+    height: 65vh;
+    scroll-behavior: smooth;
+    margin-left: 0;
+}
+
+.small-workout-cards-container::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.small-workout-cards-container > .small-workout-card{
+    margin: 10px 40px;
+
+}
+
+.workout-card-container{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+@media (max-width:600px) {
+    .workout-set-main-div{
+        padding: 5px;
+    }
+    .workout-set-div{
+        width: 100%;
+    }
+
+    .small-workout-cards-container{
+        padding: 0;
+        justify-content: center;
+    }
+
+    .workout-card-container{
+        /* display: none; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 99%;
+        height: 95%;
+        z-index: 9999;
+        background-color: rgb(0, 0, 0, 0.6);
+        display: none;
+    }
+    hr{
+        display: none;
+    }
+    .small-workout-cards-container > .small-workout-card{
+        margin: 5px;
+
+    }
+
+    .header-container > h3{
+        display: block;
+        text-align: center;
+        padding: 15px 20px;
+        /* font-size: 15px; */
+    }
+
+
+}
+
+#card-container-close-button{
+    /* width: 50px; */
+    max-height: 50px;
+    background-color: transparent;
+    color: var(--button-color-active);
+    background-color: var(--button-color-inactive);
+    font-weight: bolder;
+    font-size: large;
+    border: 0;
+    position: absolute;
+    right: 7px;
+    top: 10px;
+    z-index: 10;
+    padding: 2px 5px;
+    border-radius: 1pc;
+}
