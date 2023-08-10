@@ -10,7 +10,7 @@
 }
 
 .counterDiv > * {
-    margin: 0 5px 5px;
+    /* margin: 0 5px; */
 }
 
 
@@ -22,6 +22,7 @@
     margin-top: 4px;
     outline: none;
     text-align: center;
+    font-weight: bold;
 }
 
 .setLabel{
@@ -37,15 +38,17 @@
     background-color: var(--navigation-bg-color);
     padding: 5px;
     border-radius: 2pc;
+    margin: 5px 2px;
 }
 
 .mainCounterDiv{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 200px;
-    border: 3px solid var(--border-color);
+    border: 3px solid rgb(26, 129, 107);
     border-radius: 2pc;
     margin-top: 0px;
     padding: 8px;
+    background-color: var(--button-color-inactive);
 }

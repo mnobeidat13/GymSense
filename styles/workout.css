@@ -3,7 +3,7 @@
     justify-content: center;
     flex-wrap: wrap ;
     overflow: auto;
-    gap: 100px;
+    gap: clamp(10px, 5vw, 100px);
     margin-top: 10px;
     height: 100%;
 }
@@ -43,9 +43,9 @@
 .workouts-div3{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
-    padding: 20px 40px;
+    padding: 20px 20px;
     overflow: auto;
     scrollbar-width: none;
     height: 75vh;
@@ -61,7 +61,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: clamp(80px, 20vw ,150px);
+    width: clamp(100px, 18vw ,150px);
     height: auto;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.634);
@@ -111,6 +111,11 @@
         height: 50px;
         padding: 15px 0;
     }
+}
 
+@media (min-width:600px){
+    .workout-page-body{
+        overflow: hidden;
+    }
 
 }

@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/workout.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="stylesheet" href="styles/counter.css">
     <script src="scripts/navbar.js"></script>
     <script src="scripts/smallWorkoutCard.js"></script>
     <script src="scripts/workoutSetCard.js"></script>
-    <script src="scripts/exerciseCard.js" type="module"></script>
+    <script defer type="module" src="scripts/singleWorkout.js"></script>
 </head>
 <body>
 
@@ -30,25 +32,6 @@
                 document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
             })
         </script>
-
-        <script>
-            const queryParams = new URLSearchParams(window.location.search);
-            const parameter1 = queryParams.get('numberOfReps');
-
-            window.addEventListener('DOMContentLoaded', () => {
-                document.getElementById('background-image-div').appendChild(
-                ExerciseCard(queryParams.get('imageSrc'),
-                             queryParams.get('workoutName'),
-                             queryParams.get('numberOfSets'),
-                             queryParams.get('numberOfReps'))
-            )
-            });
-
-
-
-        </script>
-
-
     </div>
 
 </body>
