@@ -1,4 +1,4 @@
-function createWorkoutSetCard(imageSrc, mainTarget, muscles) {
+export function createWorkoutSetCard(imageSrc, mainTarget, muscles) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('small-workout-card');
 
