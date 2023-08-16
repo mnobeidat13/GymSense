@@ -26,5 +26,34 @@ function createSidebar() {
       sidebarDiv.appendChild(buttonElement);
     });
 
+    if (window.outerWidth >= 600) {
+        // sidebarDiv.classList.add('active')
+    }
+
+    function createCloseButton() {
+        var closeButton = document.createElement('button');
+        closeButton.classList.add('close-button');
+        closeButton.id = 'close-button';
+
+        var closeButtonImg = document.createElement('img');
+        closeButtonImg.id = 'menu-button-image';
+        closeButtonImg.src = 'resources/xIcon.png';
+        closeButtonImg.style.height = '20px';
+        closeButton.appendChild(closeButtonImg);
+
+        closeButton.addEventListener('click', () => {
+          const sideBar = document.getElementById('side-bar');
+          console.log(sideBar.classList);
+          sideBar.classList.remove('active');
+        });
+
+        return closeButton;
+    }
+
+    if (window.innerWidth <= 600) {
+        const closeButton = createCloseButton();
+        sidebarDiv.appendChild(closeButton);
+      }
+
     return sidebarDiv;
   }

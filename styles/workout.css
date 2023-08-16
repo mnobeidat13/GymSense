@@ -1,3 +1,16 @@
+.page-main-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  height: 100%;
+}
+
+.page-content-div{
+  width: 100%;
+  background-color: rgba(44, 66, 60, 0.53);
+}
+
 .small-cards-container {
     display: flex;
     flex-direction: row;
@@ -28,7 +41,7 @@
     border: 0;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 18px);
     color: white;
     transition: background-color 0.2s ease-in-out;
     cursor: pointer;
