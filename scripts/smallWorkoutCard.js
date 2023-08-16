@@ -1,9 +1,9 @@
 import { ExerciseCard } from "./exerciseCard.js";
 
 
-export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numberOfReps) {
+export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numberOfReps, orientation='horizontal') {
     const cardDiv = document.createElement('div');
-    cardDiv.classList.add('small-workout-card');
+    cardDiv.classList.add('small-workout-card', orientation);
 
     cardDiv.addEventListener('click', function(event){
         // cardDiv.classList.toggle('selected')
@@ -35,7 +35,7 @@ export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numb
             }
 
             container.appendChild(
-                ExerciseCard(imageSrc, workoutName, numberOfSets, numberOfReps, false)
+                ExerciseCard(imageSrc, workoutName, numberOfSets, numberOfReps)
             )
             container.style.display = 'flex'
         }
@@ -48,16 +48,25 @@ export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numb
     const nameHeading = document.createElement('h4');
     nameHeading.textContent = workoutName;
 
-    const setsHeading = document.createElement('h4');
+    const setsHeading = document.createElement('h5');
     setsHeading.textContent = `Sets: ${numberOfSets}`;
 
-    const repsHeading = document.createElement('h4');
+    const repsHeading = document.createElement('h5');
     repsHeading.textContent = `Reps: ${numberOfReps}`;
 
+    // Create a div to wrap the heading elements
+    const headingsDiv = document.createElement('div');
+    headingsDiv.classList.add('heading-container'); // You can add your own class here if needed
+
+    // Append heading elements to the headingsDiv
+    headingsDiv.appendChild(nameHeading);
+    headingsDiv.appendChild(setsHeading);
+    headingsDiv.appendChild(repsHeading);
+
+    // Append the image and headingsDiv to the cardDiv
     cardDiv.appendChild(image);
-    cardDiv.appendChild(nameHeading);
-    cardDiv.appendChild(setsHeading);
-    cardDiv.appendChild(repsHeading);
+    cardDiv.appendChild(headingsDiv);
+
 
     return cardDiv;
 }

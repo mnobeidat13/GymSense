@@ -8,18 +8,17 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/workout.css">
-    <link rel="stylesheet" href="styles/setWorkout.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="styles/card.css">
-    <link rel="stylesheet" href="styles/counter.css">
-    <script src="scripts/navbar.js"></script>
-    <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
-    <!-- <script src="scripts/workoutSetCard.js"></script> -->
-    <script defer type="module" src="scripts/setWorkout.js"></script>
     <link rel="stylesheet" href="styles/smallWorkoutCard.css">
-
+    <link rel="stylesheet" href="styles/setWorkout.css">
+    <link rel="stylesheet" href="styles/setWorkoutCard.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/smallWorkoutCard.js"></script>
+    <!-- <script src="scripts/workoutSetCard.js"></script> -->
+    <script src="scripts/exerciseCard.js" type="module" ></script>
+    <script defer type="module" src="scripts/workout.js"></script>
 </head>
-<body>
+<body class="workout-page-body">
 
     <script>
         document.body.appendChild(createNavbar())
@@ -36,23 +35,22 @@
             })
         </script>
 
-        <div class="workout-set-main-div">
-            <div class="workout-set-div">
-                <div class="header-container">
-                    <h3>Upper Boddy Workout: Chest/Biceps</h3>
-                </div>
-                <div id="small-workout-cards-container" class="small-workout-cards-container">
-                    <script>
-                    </script>
+        <div class="workouts-div1">
+            <div class="workouts-div2" id="single-workouts-div-main">
+                <h3 class="collapsible" id="single-workouts-div-header" >Choose A Single Workout</h3>
+                <!-- <hr style="width: 90%; margin: 10px;"> -->
+                <div class="workouts-div3" id="single-workouts-div">
                 </div>
             </div>
 
-            <hr>
-
-            <div class="workout-card-container" id="workout-card-container">
+            <div class="workouts-div2" id="set-workouts-div-main">
+                <h3 class="collapsible" id="set-workouts-div-header">
+                    Choose A Workout Set</h3>
+                <!-- <hr style="width: 90%; margin: 10px;"> -->
+                <div class="workouts-div3" id="set-workouts-div">
+                </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>

@@ -1,121 +1,87 @@
-.workouts-div1{
+.small-cards-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap ;
-    overflow: auto;
-    gap: clamp(10px, 5vw, 100px);
-    margin-top: 10px;
-    height: 100%;
-}
-
-.workouts-div2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--feature-bubble-background);
-    width: 40%;
-    min-width: 300px;
-    height: 90%;
-    max-height: 90vh;
-    border-radius: 25px;
-    margin: 0;
-    margin-bottom: 20px;
-    padding-bottom: 0;
-    transition: max-height 0.4s ease-in-out;
-}
-
-.workouts-div2 > h3{
-    background-color: var(--button-color-active);
-    border-radius: 25px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 100%;
-    height: clamp(30px, 5vw, 50px);
-    text-align: center;
-    padding-top: clamp(8px, 1vw, 20px);
-    font-size: clamp(15px, 3vw ,20px);
-    cursor: pointer;
-
-}
-
-.workouts-div3{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 20px;
-    overflow: auto;
-    scrollbar-width: none;
-    height: 75vh;
-    scroll-behavior: smooth;
-}
-.workouts-div3::-webkit-scrollbar {
-    width: 0;
-    display: none;
+    flex-direction: row;
+    overflow: scroll;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(86, 102, 97, 0.416);
   }
 
-.small-workout-card{
+  .workout-page-content-div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: clamp(100px, 18vw ,150px);
-    height: auto;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.634);
-    border-radius: 20px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    padding: 10px 20px;
+    background-color: var(--feature-bubble-background);
+  }
+
+  .workout-tab-buttons-container {
+    display: inline-flex;
+    justify-content: space-around;
+  }
+
+  .tab-button {
+    width: 50%;
+    height: 40px;
+    background-color: var(--button-color-inactive);
+    border: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: 20px;
+    color: white;
     transition: background-color 0.2s ease-in-out;
-}
+    cursor: pointer;
+  }
 
-.small-workout-card:hover{
-    background-color: rgba(23, 51, 43, 0.8);
-}
-
-.small-workout-card.selected{
+  .tab-button.active {
     background-color: var(--button-color-active);
+  }
+
+  .workout-tab-section-header {
+    justify-content: center;
+    margin: 8px 0 0;
+    font-size: 14px;
+    background-color: black;
+    color: var(--button-color-active);
+    display: inline-flex;
+    padding: 10px 20px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 150px;
+  }
+
+::-webkit-scrollbar{
+    display: none;
 }
 
-.small-workout-card > h4, h5{
-    width: clamp(100px, 20vw ,150px);
-    font-size: clamp(10px, 2vw ,15px);
-    text-align: center;
-    margin: 6px;
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--feature-bubble-background);
+    height: 90%;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--button-color-inactive);
+    border-radius: 5pc;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--button-color-active);
+  }
+
+.workout-tab-content.hidden{
+  display: none;
 }
 
-.small-workout-card-image{
-    width: clamp(60px, 15vw ,100px);
-    margin: 5px 0px;
-    border-radius: 3pc;
-    border-bottom-left-radius: 4pc;
-    box-shadow: 2px 2px 5px 2px;
-}
-
-@media (max-width:600px) {
-
-    .workouts-div1{
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: nowrap;
-    }
-
-    .workouts-div2.collapsed{
-        max-height: 50px;
-        overflow: hidden;
-
-    }
-
-    .workouts-div2 > h3.collapsed{
-        height: 50px;
-        padding: 15px 0;
-    }
-}
-
-@media (min-width:600px){
-    .workout-page-body{
-        overflow: hidden;
-    }
+.workout-page-content{
+  transition: opacity 0.3s ease, transform 0.3s ease;
 
 }

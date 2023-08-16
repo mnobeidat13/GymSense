@@ -27,8 +27,7 @@ export function CreateDataBase(name = 'notes_db') {
         autoIncrement: true,
       });
 
-      objectStore.createIndex('title', 'title', { unique: false });
-      objectStore.createIndex('body', 'body', { unique: false });
+      objectStore.createIndex('date', 'date', { unique: false });
 
       console.log('Database setup complete');
     });

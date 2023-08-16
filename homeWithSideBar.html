@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymSense</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <!-- <link rel="stylesheet" href="styles/home.css"> -->
+    <link rel="stylesheet" href="styles/homeWithSideBar.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="scripts/navbar.js"></script>
+</head>
+<body>
+
+    <script>
+        document.body.appendChild(createNavbar())
+    </script>
+
+    <div class="background-image-div" id="background-image-div">
+        <div class="page-main-div">
+            <div class="side-bar">
+                <h3>Welcome To <span style="color: var(--button-color-active); font-size: 22px;">G</span>ym<span style="color: var(--button-color-active); font-size: 22px;">S</span>ense</h3>
+                <button onclick="location.href = 'workout.html'">
+                    <img class="button-image" src="resources/workoutIcon.png" alt="">
+                    Start Workout
+                </button>
+                <button>
+                    <img class="button-image" src="resources/planIcon.png" alt="">
+                    Edit Your Workouts
+                </button>
+                <button>
+                    <img class="button-image" src="resources/progressICon.png" alt="">
+                    See Your Progress
+                </button>
+                <button>
+                    <img class="button-image" src="resources/profileIcon.jpg" alt="">
+                    Manage Your Profile
+                </button>
+            </div>
+
+            <div class="page-content-div">
+                <h1>Main div</h1>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

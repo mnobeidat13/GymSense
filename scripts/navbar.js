@@ -19,10 +19,14 @@ function createNavbar() {
     logoLabel.textContent = 'GymSense';
     logoAndName.appendChild(logoImg);
     logoAndName.appendChild(logoLabel);
+    logoAndName.addEventListener('click', function(){
+      window.location.href = './'
+    })
+
 
     // Create the nav-items-container div and its child elements
     const navItemsContainer = createElementWithAttributes('div', { class: 'nav-items-container' , id:'nav-items-container'});
-    const homeLink = createElementWithAttributes('a', { href: '/', class: 'home-label' });
+    const homeLink = createElementWithAttributes('a', { href: './home.html', class: 'home-label' });
     homeLink.textContent = 'Home';
     const workoutLink = createElementWithAttributes('a', { href: './workout.html', class: 'workout-label' });
     workoutLink.textContent = 'Workout';
@@ -50,13 +54,15 @@ function createNavbar() {
     menuButton.appendChild(menuButtonImg)
 
     menuButton.addEventListener('click', () => {
-      const verticalNav = document.getElementById('vertical-nav-items-container');
-      verticalNav.classList.toggle('active');
-      if (menuButtonImg.src.includes('menuIcon.png')) {
-        menuButtonImg.src = 'resources/xIcon.png';
-      } else {
-        menuButtonImg.src = 'resources/menuIcon.png';
-      }
+      const sideBar = document.getElementById('side-bar');
+      console.log(sideBar.classList);
+      sideBar.classList.toggle('active');
+      // document.getElementById('close-button').classList.add('active')
+      // if (menuButtonImg.src.includes('menuIcon.png')) {
+      //   menuButtonImg.src = 'resources/xIcon.png';
+      // } else {
+      //   menuButtonImg.src = 'resources/menuIcon.png';
+      // }
     });
 
     // Append all elements to the navbar
@@ -73,7 +79,7 @@ function createNavbarVertical() {
 
     // Create the nav-items-container div and its child elements
     const navItemsContainerVertical = createElementWithAttributes('div', { class: 'vertical-nav-items-container' , id:'vertical-nav-items-container'});
-    const homeLink = createElementWithAttributes('a', { href: '/', class: 'home-label' });
+    const homeLink = createElementWithAttributes('a', { href: './home.html', class: 'home-label' });
     homeLink.textContent = 'Home';
     const workoutLink = createElementWithAttributes('a', { href: './workout.html', class: 'workout-label' });
     workoutLink.textContent = 'Workout';

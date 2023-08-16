@@ -1,6 +1,6 @@
 // Import necessary functions from other modules
 import { Counter } from "./counter.js";
-import { addData } from "./database.js";
+import { addData, retrieveData } from "./database.js";
 
 let db;
 const activeColor = '#3d675ae6';
@@ -12,8 +12,8 @@ export function initializeDatabase(dbObject) {
 }
 
 // Function to create an exercise card element
-export function ExerciseCard(imgSrc, title, sets, reps, options = {}) {
-  const { backBtn = true, right = false, left = false } = options;
+export function ExerciseCard(imgSrc, title, sets, reps) {
+  // const { backBtn = true, right = false, left = false } = options;
 
   // Initialize counter object using the Counter function
   var counter = Counter(sets = 4);
@@ -68,7 +68,9 @@ export function ExerciseCard(imgSrc, title, sets, reps, options = {}) {
     });
 
     // Add data to the database using the addData function
+    console.log(dataItem);
     addData(db, dataItem);
+    retrieveData()
   }
 
   function resetButtonEvent() {
@@ -164,7 +166,7 @@ export function ExerciseCard(imgSrc, title, sets, reps, options = {}) {
   checkMark.setAttribute('class', 'checkImage');
 
   // Using defined Functions to create elements
-  const imgContainer = createImageContainer(imgSrc, { left, right });
+  const imgContainer = createImageContainer(imgSrc);
   const titleH = createTitleHeader(title);
   const targetDiv = createTargetDiv(sets, reps);
   var startButton = createActionButton('Start', startButtonEvent);
@@ -177,7 +179,7 @@ export function ExerciseCard(imgSrc, title, sets, reps, options = {}) {
   var nextResetDiv = document.createElement('div');
   nextResetDiv.classList.add('nextResetDiv');
   nextResetDiv.appendChild(resetButton);
-  if(backBtn  || window.innerWidth <= 600){nextResetDiv.appendChild(backButton)}
+  if(window.innerWidth <= 600 || window.location.pathname == '/singleWorkout.html'){nextResetDiv.appendChild(backButton)}
 
 
   // Create exercise card element and its components

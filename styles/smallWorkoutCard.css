@@ -1,0 +1,87 @@
+/* Horizontal Small Workout Card */
+.small-workout-card.horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: left;
+    align-items: center;
+    /* width: 400px; */
+    height: 125px;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.634);
+    border-radius: 20px;
+    transition: background-color 0.2s ease-in-out;
+    }
+
+.small-workout-card.horizontal .heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+.small-workout-card.horizontal h5{
+    margin: 5px 0;
+    font-size: 15px;
+    width: 100px;
+    text-align: center;
+}
+
+.small-workout-card.horizontal h4{
+    margin: 5px 0;
+    font-size: 15px;
+    width: 150px;
+    text-align: center;
+    }
+
+.small-workout-card.horizontal .small-workout-card-image {
+    width: 100px;
+    box-shadow: none;
+    border-radius: 20px;
+    }
+
+    /* Vertical Small Workout Card */
+.small-workout-card.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(100px, 18vw, 150px);
+    height: auto;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.634);
+    border-radius: 20px;
+    transition: background-color 0.2s ease-in-out;
+    }
+
+.small-workout-card.vertical:hover {
+    background-color: rgba(23, 51, 43, 0.8);
+    }
+
+.small-workout-card.vertical.selected {
+    background-color: var(--button-color-active);
+    }
+
+.small-workout-card.vertical h4,
+.small-workout-card.vertical h5 {
+    width: clamp(100px, 20vw, 150px);
+    font-size: clamp(10px, 2vw, 15px);
+    text-align: center;
+    margin: 6px;
+    }
+
+.small-workout-card.vertical .small-workout-card-image {
+    width: clamp(60px, 15vw, 100px);
+    margin: 5px 0;
+    border-radius: 3pc;
+    border-bottom-left-radius: 4pc;
+    box-shadow: 2px 2px 5px 2px;
+    }
+
+
+.small-workout-card:hover{
+    background-color: rgba(23, 51, 43, 0.8);
+}
+
+.small-workout-card.selected{
+    background-color: var(--button-color-active);
+}

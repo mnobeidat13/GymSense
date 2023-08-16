@@ -5,15 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymSense</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/workout.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/homeWithSideBar.css">
+    <link rel="stylesheet" href="styles/smallWorkoutCard.css">
+    <link rel="stylesheet" href="styles/setWorkoutCard.css">
+    <link rel="stylesheet" href="styles/sideBar.css">
+    <!-- <link rel="stylesheet" href="styles/home.css"> -->
+
     <script src="scripts/navbar.js"></script>
-    <script src="scripts/smallWorkoutCard.js"></script>
-    <script src="scripts/workoutSetCard.js"></script>
+    <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
+    <!-- <script src="scripts/workoutSetCard.js"></script> -->
+    <script src="scripts/sideBar.js"></script>
     <script src="scripts/exerciseCard.js" type="module" ></script>
     <script defer type="module" src="scripts/workout.js"></script>
+
 </head>
 <body class="workout-page-body">
 
@@ -23,39 +31,69 @@
 
     <div class="background-image-div" id="background-image-div">
 
-        <script>
-            document.getElementById('background-image-div').appendChild(createNavbarVertical())
-            document.getElementById('background-image-div').addEventListener('click', function(){
-                const verticalNav = document.getElementById('vertical-nav-items-container');
-                verticalNav.classList.remove('active');
-                document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
-            })
-        </script>
+        <div class="page-main-div" id="workout-page-main-div">
+            <script>
+                  const sidebarContainer = document.getElementById('workout-page-main-div');
+                  sidebarContainer.appendChild(createSidebar());
+            </script>
 
+            <div class="workout-page-content-div">
+                <div class="workout-tab-buttons-container">
+                    <button class="tab-button" id="single-workout-tab-button">
+                        Single Workout
+                    </button>
 
-        <div class="workouts-div1">
-            <div class="workouts-div2" id="single-workouts-div-main">
-                <h3 class="collapsible" id="single-workouts-div-header" >Choose A Single Workout</h3>
-                <!-- <hr style="width: 90%; margin: 10px;"> -->
-                <div class="workouts-div3" id="single-workouts-div">
+                    <button class="tab-button" id="set-workout-tab-button">
+                        Set Workout
+                    </button>
+                </div>
+
+                <div class="workout-tab-content" id="single-workout-tab-content">
+                    <div class="workout-tab-section">
+                        <h3 class="workout-tab-section-header">Favourites</h3>
+                        <div class="small-cards-container" id="single-workout-favourites-container">
+                        </div>
+
+                    </div>
+
+                    <div class="workout-tab-section">
+                        <h3 class="workout-tab-section-header">Your Workouts</h3>
+                        <div class="small-cards-container" id="single-workout-user-created-container">
+                        </div>
+
+                    </div>
+
+                    <div class="workout-tab-section">
+                        <h3 class="workout-tab-section-header">Workouts Library</h3>
+                        <div class="small-cards-container" id="single-workout-library-container">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="workout-tab-content" id="set-workout-tab-content">
+                    <div class="workout-tab-section">
+                        <h3 class="workout-tab-section-header">Favourites</h3>
+                        <div class="small-cards-container" id="set-workout-favourites-container">
+                        </div>
+
+                    </div>
+
+                    <div class="workout-tab-section">
+                        <h3 class="workout-tab-section-header">Your Workouts</h3>
+                        <div class="small-cards-container" id="set-workout-user-created-container">
+                        </div>
+
+                    </div>
+
+                    <div class="workout-tab-section">
+                        <h3 class="workout-tab-section-header">Workouts Library</h3>
+                        <div class="small-cards-container" id="set-workout-library-container">
+                        </div>
+
+                    </div>
                 </div>
             </div>
-
-            <div class="workouts-div2" id="set-workouts-div-main">
-                <h3 class="collapsible" id="set-workouts-div-header">
-                    Choose A Workout Set</h3>
-                <!-- <hr style="width: 90%; margin: 10px;"> -->
-                <div class="workouts-div3" id="set-workouts-div">
-                </div>
-            </div>
-        </div>
-
-
     </div>
-    <script>
-
-    </script>
-
-
 </body>
 </html>
