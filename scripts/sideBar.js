@@ -7,8 +7,8 @@ function createSidebar() {
     sidebarDiv.appendChild(heading);
 
     const buttonsData = [
-      { text: 'Start Workout', imageSrc: 'resources/workoutIcon.png', link: 'workout.html' },
-      { text: 'Edit Your Workouts', imageSrc: 'resources/planIcon.png', link: '#' },
+      { text: 'Start Workout', imageSrc: 'resources/workoutIcon.png', link: './workout.html' },
+      { text: 'Edit Your Workouts', imageSrc: 'resources/planIcon.png', link: './editWorkouts.html' },
       { text: 'See Your Progress', imageSrc: 'resources/progressICon.png', link: '#' },
       { text: 'Manage Your Profile', imageSrc: 'resources/profileIcon.jpg', link: '#' },
     ];

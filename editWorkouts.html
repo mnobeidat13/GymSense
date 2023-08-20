@@ -9,7 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/workout.css">
+    <link rel="stylesheet" href="styles/editWorkouts.css">
     <link rel="stylesheet" href="styles/smallWorkoutCard.css">
     <link rel="stylesheet" href="styles/setWorkoutCard.css">
     <link rel="stylesheet" href="styles/sideBar.css">
@@ -18,7 +18,7 @@
     <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
     <script src="scripts/sideBar.js"></script>
     <script src="scripts/exerciseCard.js" type="module" ></script>
-    <script defer type="module" src="scripts/workout.js"></script>
+    <script defer type="module" src="scripts/editWorkouts.js"></script>
 
 </head>
 <body class="workout-page-body">
@@ -48,48 +48,27 @@
 
                 <div class="workout-tab-content" id="single-workout-tab-content">
                     <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Favourites</h3>
-                        <div class="small-cards-container" id="single-workout-favourites-container">
+                        <div class="workout-tab-section-header-container">
+                            <h3 class="workout-tab-section-header">Your Workouts Library
+                                <h3 class="create-new-workout-button">+ Create New Workout</h3>
+                            </h3>
+                        </div>
+                        <div class="small-cards-container" id="user-created-workouts-container">
                         </div>
 
                     </div>
 
-                    <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Your Workouts</h3>
-                        <div class="small-cards-container" id="single-workout-user-created-container">
-                        </div>
 
-                    </div>
-
-                    <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Workouts Library</h3>
-                        <div class="small-cards-container" id="single-workout-library-container">
-                        </div>
-
-                    </div>
                 </div>
 
                 <div class="workout-tab-content" id="set-workout-tab-content">
                     <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Favourites</h3>
-                        <div class="small-cards-container" id="set-workout-favourites-container">
+                        <h3 class="workout-tab-section-header">Your Set-Workouts Library</h3>
+                        <div class="small-cards-container" id="user-created-set-workouts-container">
                         </div>
 
                     </div>
 
-                    <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Your Workouts</h3>
-                        <div class="small-cards-container" id="set-workout-user-created-container">
-                        </div>
-
-                    </div>
-
-                    <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Workouts Library</h3>
-                        <div class="small-cards-container" id="set-workout-library-container">
-                        </div>
-
-                    </div>
                 </div>
             </div>
     </div>

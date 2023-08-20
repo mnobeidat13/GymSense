@@ -1,0 +1,135 @@
+.page-main-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    height: 100%;
+  }
+
+  .page-content-div{
+    width: 100%;
+    background-color: rgba(44, 66, 60, 0.53);
+  }
+
+  .small-cards-container {
+      display: flex;
+      flex-direction: row;
+      overflow: scroll;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+      background-color: rgba(86, 102, 97, 0.416);
+      height: 65vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .workout-page-content-div {
+      display: flex;
+      flex-direction: column;
+      overflow: scroll;
+      scroll-behavior: smooth;
+      padding: 10px 20px;
+      background-color: var(--feature-bubble-background);
+    }
+
+    .workout-tab-buttons-container {
+      display: inline-flex;
+      justify-content: space-around;
+    }
+
+.tab-button {
+    width: 50%;
+    height: 40px;
+    background-color: var(--button-color-inactive);
+    border: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    font-size: clamp(14px, 2vw, 18px);
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: var(--button-color-active);
+}
+
+.workout-tab-section-header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 60%;
+    margin-top: 5px;
+    gap: 10px;
+}
+.workout-tab-section-header {
+    justify-content: center;
+    margin: 8px 0 0;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: black;
+    color: var(--button-color-active);
+    display: inline-flex;
+}
+
+.create-new-workout-button{
+    /* justify-content: center; */
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    background-color: var(--button-color-active);
+    display: inline-flex;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+  ::-webkit-scrollbar{
+      display: none;
+  }
+  .small-cards-container::-webkit-scrollbar{
+    display: block;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: var(--feature-bubble-background);
+      height: 90%;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: var(--button-color-inactive);
+      border-radius: 5pc;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--button-color-active);
+    }
+
+  .workout-tab-content.hidden{
+    display: none;
+  }
+
+  .workout-page-content{
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+  }
+
+
+@media (max-width:600px) {
+    .workout-tab-section-header-container{
+        width: 80%;
+
+    }
+}

@@ -8,7 +8,7 @@ export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numb
     cardDiv.addEventListener('click', function(event){
         // cardDiv.classList.toggle('selected')
 
-        if(window.location.pathname == '/workout.html'){
+        if(window.location.pathname.includes('workout.html')){
             const data = {
                 imageSrc: imageSrc,
                 workoutName: workoutName,
@@ -22,7 +22,7 @@ export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numb
             window.location.href = nextPageURL;
         }
 
-        if(window.location.pathname == '/setWorkout.html'){
+        if(window.location.pathname.includes('setWorkout.html')){
             var container = document.getElementById('workout-card-container')
 
             const closeButton = document.getElementById('card-container-close-button');
