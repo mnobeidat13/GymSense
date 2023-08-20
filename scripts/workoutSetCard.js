@@ -4,8 +4,10 @@ export function createWorkoutSetCard(imageSrc, mainTarget, muscles, orientation 
     cardDiv.classList.add(orientation);
 
     cardDiv.addEventListener('click', function(event) {
-        cardDiv.classList.toggle('selected');
-        window.location.href = 'setWorkout.html';
+        // cardDiv.classList.toggle('selected');
+        if (window.location.pathname.includes('workout.html')) {
+            window.location.href = 'setWorkout.html';
+        }
     });
 
     const image = document.createElement('img');
