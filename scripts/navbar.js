@@ -55,7 +55,6 @@ function createNavbar() {
 
     menuButton.addEventListener('click', () => {
       const sideBar = document.getElementById('side-bar');
-      console.log(sideBar.classList);
       sideBar.classList.toggle('active');
       // document.getElementById('close-button').classList.add('active')
       // if (menuButtonImg.src.includes('menuIcon.png')) {
