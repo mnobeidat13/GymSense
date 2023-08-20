@@ -140,7 +140,7 @@ export function ExerciseCard(imgSrc, title, sets, reps) {
     backButton.classList.add('actionButton');
     backButton.style.cssText = 'textAlign:left; paddingLeft:10px';
     backButton.addEventListener('click', function() {
-      if (window.location.pathname == '/singleWorkout.html') {
+      if (window.location.pathname.includes('/singleWorkout.html')) {
         history.back();
       }
       if (window.innerWidth <= 600) {
