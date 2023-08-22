@@ -12,8 +12,6 @@
     max-width: 350px;
 }
 
-
-
 .login-tab-container{
     display: flex;
     gap: 40px;
@@ -32,7 +30,7 @@
 }
 
 .login-tab-container button.active {
-    background-color: var(--button-color-active); /* Your active button color */
+    background-color: var(--button-color-active);
     color: white;
 }
 

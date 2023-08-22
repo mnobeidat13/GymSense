@@ -136,11 +136,12 @@ export function ExerciseCard(imgSrc, title, sets, reps) {
   // Create next workout button
   function createBackButton() {
     const backButton = document.createElement('button');
-    backButton.innerHTML = "Back <i class='fas fa-angle-double-right'></i>";
+    backButton.innerHTML = "Back";
     backButton.classList.add('actionButton');
     backButton.style.cssText = 'textAlign:left; paddingLeft:10px';
     backButton.addEventListener('click', function() {
       if (window.location.pathname.includes('/singleWorkout.html')) {
+        console.log(window.location.pathname);
         history.back();
       }
       if (window.innerWidth <= 600) {

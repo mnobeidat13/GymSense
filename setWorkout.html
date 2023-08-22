@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/workout.css">
     <link rel="stylesheet" href="styles/setWorkout.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="styles/card.css">
     <link rel="stylesheet" href="styles/counter.css">
-    <script src="scripts/navbar.js"></script>
-    <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
-    <!-- <script src="scripts/workoutSetCard.js"></script> -->
-    <script defer type="module" src="scripts/setWorkout.js"></script>
+    <link rel="stylesheet" href="styles/sideBar.css">
     <link rel="stylesheet" href="styles/smallWorkoutCard.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
+    <script defer type="module" src="scripts/setWorkout.js"></script>
+    <script src="scripts/sideBar.js"></script>
+    <script src="scripts/navbar.js"></script>
 
 </head>
 <body>
@@ -26,30 +28,27 @@
     </script>
 
     <div class="background-image-div" id="background-image-div">
+        <div class="page-main-div" id="workout-page-main-div">
+            <script>
+                  const sidebarContainer = document.getElementById('workout-page-main-div');
+                  sidebarContainer.appendChild(createSidebar());
+            </script>
 
-        <script>
-            document.getElementById('background-image-div').appendChild(createNavbarVertical())
-            document.getElementById('background-image-div').addEventListener('click', function(){
-                const verticalNav = document.getElementById('vertical-nav-items-container');
-                verticalNav.classList.remove('active');
-                document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
-            })
-        </script>
-
-        <div class="workout-set-main-div">
-            <div class="workout-set-div">
-                <div class="header-container">
-                    <h3>Upper Boddy Workout: Chest/Biceps</h3>
+            <div class="workout-set-main-div">
+                <div class="workout-set-div">
+                    <div class="header-container">
+                        <h3>Upper Boddy Workout: Chest/Biceps</h3>
+                    </div>
+                    <div id="small-workout-cards-container" class="small-workout-cards-container">
+                        <script>
+                        </script>
+                    </div>
                 </div>
-                <div id="small-workout-cards-container" class="small-workout-cards-container">
-                    <script>
-                    </script>
+
+                <hr>
+
+                <div class="workout-card-container" id="workout-card-container">
                 </div>
-            </div>
-
-            <hr>
-
-            <div class="workout-card-container" id="workout-card-container">
             </div>
         </div>
     </div>

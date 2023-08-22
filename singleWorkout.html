@@ -5,18 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymSense</title>
+    <!-- Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/workout.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/sideBar.css">
     <link rel="stylesheet" href="styles/card.css">
     <link rel="stylesheet" href="styles/counter.css">
+    <!-- Scripts -->
     <script src="scripts/navbar.js"></script>
-    <script src="scripts/smallWorkoutCard.js"></script>
-    <!-- <script src="scripts/workoutSetCard.js"></script> -->
+    <!-- <script defer type="module" src="scripts/smallWorkoutCard.js"></script> -->
+    <script src="scripts/sideBar.js"></script>
+    <script src="scripts/exerciseCard.js" type="module" ></script>
     <script defer type="module" src="scripts/singleWorkout.js"></script>
+
 </head>
-<body>
+
+<style>
+    .single-workout-card-container-div{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+</style>
+
+<body class="workout-page-body">
 
     <script>
         document.body.appendChild(createNavbar())
@@ -24,15 +38,15 @@
 
     <div class="background-image-div" id="background-image-div">
 
-        <script>
-            document.getElementById('background-image-div').appendChild(createNavbarVertical())
-            document.getElementById('background-image-div').addEventListener('click', function(){
-                const verticalNav = document.getElementById('vertical-nav-items-container');
-                verticalNav.classList.remove('active');
-                document.getElementById('menu-button-image').src = 'resources/menuIcon.png'
-            })
-        </script>
-    </div>
+        <div class="page-main-div" id="workout-page-main-div">
+            <script>
+                  const sidebarContainer = document.getElementById('workout-page-main-div');
+                  sidebarContainer.appendChild(createSidebar());
+            </script>
 
+            <div id="single-workout-card-container-div" class="single-workout-card-container-div">
+
+            </div>
+    </div>
 </body>
 </html>

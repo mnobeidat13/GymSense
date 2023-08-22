@@ -49,26 +49,70 @@
                 <div class="workout-tab-content" id="single-workout-tab-content">
                     <div class="workout-tab-section">
                         <div class="workout-tab-section-header-container">
-                            <h3 class="workout-tab-section-header">Your Workouts Library
-                                <h3 class="create-new-workout-button">+ Create New Workout</h3>
+                            <h3 class="workout-tab-section-header">User Workouts Library
+                                <h3 id="create-new-workout-button" class="create-new-workout-button">+ New</h3>
                             </h3>
                         </div>
-                        <div class="small-cards-container" id="user-created-workouts-container">
+                        <div class="small-cards-container" id="user-created-workouts-container"></div>
+
+                        <div class="create-new-workout-div" id="create-new-workout-div">
+
+                            <button id="new_workout-div-close-button" class="close-button">X</button>
+
+                            <form class="new-workout-form" id="new-workout-form" action="">
+                                <div class="workout-name-div">
+                                    <h4>Workout Name</h4>
+                                    <input type="text" value="Bench Press" name="workoutName" class="workout-name-input">
+                                </div>
+
+                                <div class="sets-number-div">
+                                    <h4>Sets</h4>
+                                    <input type="number" value="4" name="numberOfSets" class="sets-number-input">
+                                </div>
+
+                                <div class="reps-number-div">
+                                    <h4>Reps</h4>
+                                    <input type="number" value="12" name="numberOfReps" class="reps-number-input">
+                                </div>
+
+                                <div class="add-image-div">
+                                    <input type="file" id="fileInput" style="display: none;">
+                                    <button id="add-image-button">+</button>
+                                    <h5>Add Image</h5>
+                                    <img id="imagePreview" src="resources/exerciseIcon.png" alt="Uploaded Image">
+                                </div>
+
+                                <input type="submit" value="Create">
+                            </form>
                         </div>
-
                     </div>
-
-
                 </div>
 
                 <div class="workout-tab-content" id="set-workout-tab-content">
                     <div class="workout-tab-section">
-                        <h3 class="workout-tab-section-header">Your Set-Workouts Library</h3>
-                        <div class="small-cards-container" id="user-created-set-workouts-container">
+                        <div class="workout-tab-section-header-container">
+                            <h3 class="workout-tab-section-header">User Set-Workouts Library
+                                <h3 id="create-new-workout-set-button" class="create-new-workout-button">+ New</h3>
+                            </h3>
+                        </div>
+                        <div class="small-cards-container" id="user-created-workouts-set-container"></div>
+
+                        <div class="create-new-workout-div" id="create-new-workout-set-div">
+                            <button id="new_workout-set-div-close-button" class="close-button">X</button>
+                            <form class="new-workout-form" id="new-workout-set-form" action="">
+                                <div class="sets-number-div">
+                                    <h4>Body Target</h4>
+                                    <input type="text" value="Upper Body" name="bodyTarget" class="sets-number-input">
+                                </div>
+                                <div class="sets-number-div">
+                                    <h4>Muscle Target</h4>
+                                    <input type="text" value="Biceps/Chest" name="muscleTarget" class="sets-number-input">
+                                </div>
+                                <input type="submit" value="Create">
+                            </form>
                         </div>
 
                     </div>
-
                 </div>
             </div>
     </div>

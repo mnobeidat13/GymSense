@@ -38,7 +38,7 @@ hr{
     justify-content: left;
     /* width: 50%; */
     /* gap: 80px; */
-    padding: 20px 20px;
+    padding: 20px 0px;
     overflow: auto;
     scrollbar-width: none;
     height: 65vh;
@@ -52,14 +52,14 @@ hr{
 }
 
 .small-workout-cards-container > .small-workout-card{
-    margin: 10px 40px;
+    margin: 10px 30px;
 
 }
 
 .workout-card-container{
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 30%;
 }
 
 @media (max-width:600px) {

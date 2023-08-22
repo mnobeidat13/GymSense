@@ -1,4 +1,6 @@
 export function createWorkoutSetCard(imageSrc, mainTarget, muscles, orientation = 'horizontal') {
+
+    imageSrc = 'resources/exerciseIcon1.png'
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('set-workout-card');
     cardDiv.classList.add(orientation);
