@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymSense</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/workout.css">
+    <link rel="stylesheet" href="styles/sideBar.css">
+    <link rel="stylesheet" href="styles/profilePage.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <script src="scripts/sideBar.js"></script>
+    <script src="scripts/navbar.js"></script>
+
+</head>
+<body>
+
+    <script>
+        document.body.appendChild(createNavbar())
+    </script>
+
+    <div class="background-image-div" id="background-image-div">
+        <div class="page-main-div" id="workout-page-main-div">
+            <script>
+                  const sidebarContainer = document.getElementById('workout-page-main-div');
+                  sidebarContainer.appendChild(createSidebar());
+            </script>
+
+        <!-- <div class="workout-page-content-div">  -->
+            <div class="profile-page-content-div">
+
+                <div class="avatar-name-div">
+                    <img class="avatar" src="resources/profile2.jpg" alt="avatar">
+                    <div class="info-div">
+                        <div class="name-div label-input-pair">
+                            <label class="input-label" for="name-input">Name</label>
+                            <input class="input-field" type="text"
+                                   name="name" id="name-input" value="User Name">
+                        </div>
+
+                        <div class="email-div label-input-pair">
+                            <label class="input-label" for="name-input">Email</label>
+                            <input class="input-field" type="email"
+                                    name="email" id="email-input" value="User@mail.com">
+                        </div>
+
+                        <div class="password-div label-input-pair">
+                            <label class="input-label" for="password-input">Password</label>
+                            <input class="input-field" type="password"
+                                    name="password" id="password-input" value="1234667889">
+                            <button id="change-password-button">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-info-div">
+                    <h3>Body Metrics</h3>
+                    <div class="columns-container" id="columns-container">
+                        <div class="column">
+                            <div class="label-input-pair">
+                                <label class="input-label" for="height-input">Height</label>
+                                <input class="input-field" type="number"
+                                        name="height" id="height-input" value="182">
+                            </div>
+
+                            <div class="label-input-pair">
+                                <label class="input-label" for="weight-input">Weight</label>
+                                <input class="input-field" type="number"
+                                        name="weight" id="weight-input" value="78">
+                            </div>
+
+                            <div class="label-input-pair">
+                                <label class="input-label" for="bmi-input">BMI</label>
+                                <input class="input-field" type="number"
+                                        name="bmi" id="bmi-input" value="78">
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="label-input-pair">
+                                <label class="input-label" for="max-weight-input">Target Weight</label>
+                                <input class="input-field" type="number"
+                                        name="maxWeight" id="max-weight-input" value="182">
+                            </div>
+
+                            <div class="label-input-pair">
+                                <label class="input-label" for="smm-input">Skeletal Muscle Mass</label>
+                                <input class="input-field" type="number"
+                                        name="smm" id="smm-input" value="34">
+                            </div>
+
+                            <div class="label-input-pair">
+                                <label class="input-label" for="bfm-input">Body Fat Mass</label>
+                                <input class="input-field" type="number"
+                                        name="bfm" id="bfm-input" value="17">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="save-edit-buttons-div">
+                        <button id="edit-button">Edit</button>
+                        <button id="save-button" disabled>Save</button>
+                    </div>
+
+                </div>
+
+                <div class="change-password-div" id="change-password-div">
+                    <label class="input-label" for="change-password-input">Old Password</label>
+                    <input class="input-field" type="password"
+                            name="password" id="change-password-input">
+
+                    <label class="input-label" for="change-password-input">New Password</label>
+                    <input class="input-field" type="password"
+                            name="password" id="change-password-input">
+
+                    <label class="input-label" for="change-password-input">Confirm New Password</label>
+                    <input class="input-field" type="password"
+                            name="password" id="change-password-input">
+                    <div class="confirm-cancel-buttons-div">
+                        <button id="confirm-change-password-button">Confirm</button>
+                        <button id="cancel-change-password-button">cancel</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputFields = document.getElementById('columns-container').querySelectorAll('.input-field')
+        inputFields.forEach((inputField) => {
+            inputField.disabled = true
+        })
+
+        document.getElementById('edit-button').addEventListener('click', function(e){
+            e.target.disabled = true
+            document.getElementById('save-button').disabled = false
+            inputFields.forEach((inputField) => {
+                inputField.disabled = false
+            })
+        })
+
+        document.getElementById('save-button').addEventListener('click', function(e){
+            e.target.disabled = true
+            document.getElementById('edit-button').disabled = false
+            inputFields.forEach((inputField) => {
+                inputField.disabled = true
+            })
+        })
+
+        const changePasswordButton = document.getElementById('change-password-button')
+        changePasswordButton.addEventListener('click', function(e){
+            document.getElementById('change-password-div').classList.add('visible')
+        })
+
+        const cancelButton = document.getElementById('cancel-change-password-button')
+        cancelButton.addEventListener('click', function(e){
+            document.getElementById('change-password-div').classList.remove('visible')
+        })
+
+        const confirmButton = document.getElementById('confirm-change-password-button')
+        confirmButton.addEventListener('click', function(e){
+            document.getElementById('change-password-div').classList.remove('visible')
+        })
+
+    </script>
+</body>
+</html>

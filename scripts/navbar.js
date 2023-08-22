@@ -39,7 +39,7 @@ function createNavbar() {
     // Create the profile-label-container div and its child elements
     const profileLabelContainer = createElementWithAttributes('div', { class: 'profile-label-contianer' });
     const profileIcon = createElementWithAttributes('img', { class: 'profile-icon', src: 'resources/profileIcon.jpg', alt: 'profile-icon', style: 'width: 25px;' });
-    const profileLink = createElementWithAttributes('a', { href: './profile.html', class: 'profile-label' });
+    const profileLink = createElementWithAttributes('a', { href: './profilePage.html', class: 'profile-label' });
     profileLink.textContent = 'Profile';
     profileLabelContainer.appendChild(profileIcon);
     profileLabelContainer.appendChild(profileLink);

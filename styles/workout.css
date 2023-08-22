@@ -20,14 +20,14 @@
     background-color: rgba(86, 102, 97, 0.416);
   }
 
-  .workout-page-content-div {
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    padding: 10px 20px;
-    background-color: var(--feature-bubble-background);
-  }
+.workout-page-content-div {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  padding: 10px 20px;
+  background-color: var(--feature-bubble-background);
+}
 
   .workout-tab-buttons-container {
     display: inline-flex;
