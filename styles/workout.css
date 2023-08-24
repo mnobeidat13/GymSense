@@ -9,6 +9,14 @@
 .page-content-div{
   width: 100%;
   background-color: rgba(44, 66, 60, 0.53);
+  border: 2px dashed white;
+}
+
+.workout-tab-content{
+  /* border: 3px dashed white; */
+  padding: 0px 5px;
+  border-radius: 5px;
+  /* height: 100%; */
 }
 
 .small-cards-container {

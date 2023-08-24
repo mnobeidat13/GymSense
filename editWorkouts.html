@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/smallWorkoutCard.css">
     <link rel="stylesheet" href="styles/setWorkoutCard.css">
     <link rel="stylesheet" href="styles/sideBar.css">
+    <link rel="stylesheet" href="styles/profilePage.css">
     <!-- Scripts -->
     <script src="scripts/navbar.js"></script>
     <script defer type="module" src="scripts/smallWorkoutCard.js"></script>
@@ -57,7 +58,7 @@
 
                         <div class="create-new-workout-div" id="create-new-workout-div">
 
-                            <button id="new_workout-div-close-button" class="close-button">X</button>
+                            <button id="new-workout-div-close-button" class="close-button">X</button>
 
                             <form class="new-workout-form" id="new-workout-form" action="">
                                 <div class="workout-name-div">
@@ -97,19 +98,44 @@
                         </div>
                         <div class="small-cards-container" id="user-created-workouts-set-container"></div>
 
-                        <div class="create-new-workout-div" id="create-new-workout-set-div">
-                            <button id="new_workout-set-div-close-button" class="close-button">X</button>
-                            <form class="new-workout-form" id="new-workout-set-form" action="">
-                                <div class="sets-number-div">
-                                    <h4>Body Target</h4>
-                                    <input type="text" value="Upper Body" name="bodyTarget" class="sets-number-input">
+                        <div class="create-new-workout-set-div" id="create-new-workout-set-div">
+
+
+
+                            <div class="workout-tab-buttons-container">
+                                <button class="tab-button" id="user-workouts-tab-button">
+                                    User Created Workouts
+                                </button>
+
+                                <button class="tab-button" id="pre-built-workouts-tab-button">
+                                    Pre-Built Workouts
+                                </button>
+                            </div>
+
+                            <div class="workout-tab-content" id="user-workouts-tab-content">
+                                <div class="card-container-x" id="user-created-workouts-container-create-plan"></div>
+                            </div>
+
+                            <div class="workout-tab-content" id="pre-built-workouts-tab-content">
+                                <div class="card-container-x"  id="pre-built-workouts-container-create-plan"></div>
+                            </div>
+
+                            <div class="target-input-div">
+                                <div class="label-input-pair horizontal">
+                                    <label class="input-label" for="bodyTarget-input">Body Target</label>
+                                    <input class="input-field" type="text"
+                                           name="bodyTarget" id="bodyTarget-input" value="bodyTarget">
                                 </div>
-                                <div class="sets-number-div">
-                                    <h4>Muscle Target</h4>
-                                    <input type="text" value="Biceps/Chest" name="muscleTarget" class="sets-number-input">
+                                <div class="label-input-pair horizontal">
+                                    <label class="input-label" for="muscleTarget-input">Muscle Target</label>
+                                    <input class="input-field" type="text"
+                                           name="muscleTarget" id="muscleTarget-input" value="muscleTarget">
                                 </div>
-                                <input type="submit" value="Create">
-                            </form>
+
+                                <button class="cancel-create-set-workout-button" id="cancel-create-set-workout-button">
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
 
                     </div>

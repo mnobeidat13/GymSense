@@ -39,6 +39,7 @@
 .workout-tab-buttons-container {
     display: inline-flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .tab-button {
@@ -184,6 +185,73 @@
 
 }
 
+.create-new-workout-set-div{
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border: 2px solid;
+    box-shadow: 0px 0px 10px 5px white;
+    margin: 20px;
+}
+
+.create-new-workout-set-div.hidden{
+    display: none;
+}
+
+.create-new-workout-set-div .small-cards-container{
+    height: 62%;
+}
+
+.target-input-div{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    border-top: 3px dashed white;
+    /* margin-top: 10px; */
+    padding: 15px;
+    padding-top: 20px;
+    background-color: var(--feature-bubble-background);
+}
+
+.label-input-pair.horizontal{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cancel-create-set-workout-button{
+    width: 100px;
+    margin: auto;
+    background-color: var(--button-color-active);
+    border: 0;
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.cancel-create-set-workout-button:active{
+    transform: scale(1.1);
+}
+
+.card-container-x{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 400px;
+    gap: 50px;
+    padding: 20px;
+    justify-content: center;
+    background-color: var(--feature-bubble-background);
+}
 
 .workout-tab-content{
     position: relative;
@@ -198,10 +266,20 @@
 }
 
 
-@media (max-width:600px) {
+@media (max-width:800px) {
     .workout-tab-section-header-container{
         width: 80%;
+    }
 
+    .target-input-div{
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .card-container-x{
+        height: 300px;
+        gap: 10px;
     }
 }
 
