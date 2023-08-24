@@ -8,7 +8,6 @@ const newWorkoutSetButton = document.getElementById('create-new-workout-set-butt
 const newWorkoutButton = document.getElementById('create-new-workout-button')
 const addImageButton = document.getElementById('add-image-button')
 const closeButton = document.getElementById('new-workout-div-close-button')
-const closeButtonSet = document.getElementById('new_workout-set-div-close-button')
 
 const userWorkoutsTabButton = document.getElementById('user-workouts-tab-button')
 const preBuiltWorkoutsTabButton = document.getElementById('pre-built-workouts-tab-button')
@@ -26,7 +25,6 @@ const newWorkoutDiv = document.getElementById('create-new-workout-div')
 const fileInput = document.getElementById('fileInput');
 const imagePreview = document.getElementById('imagePreview');
 const newWorkoutForm = document.getElementById('new-workout-form')
-const newWorkoutSetForm = document.getElementById('new-workout-set-form')
 const userCreatedWorkoutsContainer = document.getElementById('user-created-workouts-container')
 const userCreatedWorkoutSetContainer = document.getElementById('user-created-workouts-set-container')
 const newWorkoutSetDiv = document.getElementById('create-new-workout-set-div')
@@ -139,9 +137,6 @@ newWorkoutSetButton.addEventListener('click', ()=>{
     newWorkoutSetDiv.classList.remove('hidden')
 })
 
-closeButtonSet.addEventListener('click', ()=>{
-    newWorkoutSetDiv.classList.add('hidden')
-})
 
 addImageButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -174,16 +169,16 @@ newWorkoutForm.addEventListener('submit', function(e){
     newWorkoutDiv.classList.add('hidden')
 })
 
-newWorkoutSetForm.addEventListener('submit', function(e){
+// newWorkoutSetForm.addEventListener('submit', function(e){
 
-    e.preventDefault()
-    var inputs = this.querySelectorAll("input");
-    var inputData = {};
-    inputs.forEach(function(input) {
-        if (input.type == 'text' || input.type == 'number' ) {
-            inputData[input.name] = input.value}});
+//     e.preventDefault()
+//     var inputs = this.querySelectorAll("input");
+//     var inputData = {};
+//     inputs.forEach(function(input) {
+//         if (input.type == 'text' || input.type == 'number' ) {
+//             inputData[input.name] = input.value}});
 
-    const newWorkoutSetCard = createWorkoutSetCard(inputData['bodyTarget'], inputData['muscleTarget'], inputData['numberOfReps'])
-    userCreatedWorkoutSetContainer.appendChild(newWorkoutSetCard)
-    newWorkoutSetDiv.classList.add('hidden')
-})
+//     const newWorkoutSetCard = createWorkoutSetCard(inputData['bodyTarget'], inputData['muscleTarget'], inputData['numberOfReps'])
+//     userCreatedWorkoutSetContainer.appendChild(newWorkoutSetCard)
+//     newWorkoutSetDiv.classList.add('hidden')
+// })
