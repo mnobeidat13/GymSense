@@ -1,9 +1,26 @@
 import { ExerciseCard } from "./exerciseCard.js";
+import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/esm-browser/index.js';
 
+const selectedCards = []
+
+export function getSelectedCards(){
+    return selectedCards
+}
 
 export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numberOfReps, orientation='horizontal') {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('small-workout-card', orientation);
+
+    const uniqueId = uuidv4()
+
+    const cardData = {
+        workoutId: uniqueId,
+        workoutName: workoutName,
+        numberOfSets: numberOfSets,
+        numberOfReps: numberOfReps
+    };
+    cardDiv.cardData = cardData;
+
 
     cardDiv.addEventListener('click', function(event){
         // cardDiv.classList.toggle('selected')
@@ -23,6 +40,8 @@ export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numb
         }
 
         if(window.location.pathname.includes('setWorkout.html')){
+            cardDiv.classList.toggle('selected')
+            selectedCards.forEach((card)=> card.classList.remove('selected'))
             var container = document.getElementById('workout-card-container')
 
             const closeButton = document.getElementById('card-container-close-button');
@@ -38,6 +57,16 @@ export function createSmallWorkoutCard(imageSrc, workoutName, numberOfSets, numb
                 ExerciseCard(imageSrc, workoutName, numberOfSets, numberOfReps)
             )
             container.style.display = 'flex'
+        }
+        if(window.location.pathname.includes('editWorkouts.html')){
+            cardDiv.classList.toggle('selected')
+            const index = selectedCards.indexOf(cardDiv.cardData);
+            if (index !== -1) {
+                selectedCards.splice(index, 1);
+            }
+            else {
+                selectedCards.push(cardDiv.cardData);
+            }
         }
     })
 

@@ -58,7 +58,7 @@
 
 
 
-@media (max-width:600px) {
+@media (max-width:800px) {
 
     .workouts-div1{
         flex-direction: column;
@@ -80,11 +80,4 @@
         height: 50px;
         padding: 15px 0;
     }
-}
-
-@media (min-width:600px){
-    .workout-page-body{
-        /* overflow: hidden; */
-    }
-
 }

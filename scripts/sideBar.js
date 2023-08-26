@@ -1,3 +1,4 @@
+
 function createSidebar() {
     const sidebarDiv = document.createElement('div');
     sidebarDiv.classList.add('side-bar');
@@ -26,9 +27,9 @@ function createSidebar() {
       sidebarDiv.appendChild(buttonElement);
     });
 
-    if (window.outerWidth >= 600) {
-        // sidebarDiv.classList.add('active')
-    }
+    // if (window.outerWidth >= 800) {
+    //     // sidebarDiv.classList.add('active')
+    // }
 
     function createCloseButton() {
         var closeButton = document.createElement('button');
@@ -50,7 +51,7 @@ function createSidebar() {
         return closeButton;
     }
 
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 800) {
         const closeButton = createCloseButton();
         sidebarDiv.appendChild(closeButton);
       }

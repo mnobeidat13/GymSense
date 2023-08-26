@@ -1,5 +1,6 @@
 import { createSmallWorkoutCard } from "../scripts/smallWorkoutCard.js";
 import { createWorkoutSetCard } from "../scripts/workoutSetCard.js";
+import { smallScreenWidth } from './index.js';
 
 const singleWorkoutDiv = document.getElementById('single-workouts-div'); // Replace with the actual container element
 
@@ -53,7 +54,7 @@ workoutSetData.forEach(set => {
 });
 
 const screenWidth = window.innerWidth;
-if(screenWidth<600){
+if(screenWidth<smallScreenWidth){
     document.getElementById('single-workouts-div-main').classList.add('collapsed')
     document.getElementById('set-workouts-div-main').classList.add('collapsed')
     document.getElementById('set-workouts-div-header').classList.add('collapsed')

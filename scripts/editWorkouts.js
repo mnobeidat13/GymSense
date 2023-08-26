@@ -1,4 +1,4 @@
-import { createSmallWorkoutCard } from "./smallWorkoutCard.js";
+import { createSmallWorkoutCard, getSelectedCards } from "./smallWorkoutCard.js";
 import { createWorkoutSetCard } from "./workoutSetCard.js";
 
 //Buttons Queries
@@ -12,7 +12,7 @@ const closeButton = document.getElementById('new-workout-div-close-button')
 const userWorkoutsTabButton = document.getElementById('user-workouts-tab-button')
 const preBuiltWorkoutsTabButton = document.getElementById('pre-built-workouts-tab-button')
 const cancelCreateSetWorkoutButton = document.getElementById('cancel-create-set-workout-button')
-
+const confirmCreateSetWorkoutButton = document.getElementById('create-set-workout-button')
 
 //Divs Queries
 const singleWorkoutTabContent = document.getElementById('single-workout-tab-content')
@@ -118,6 +118,17 @@ userWorkoutsTabButton.addEventListener('click', function(event){
     preBuiltWorkoutsTabButton.classList.remove('active')
     userWorkoutsTabContent.classList.remove('hidden')
     preBuiltWorkoutsTabContent.classList.add('hidden')
+})
+
+confirmCreateSetWorkoutButton.addEventListener('click', function(e){
+    newWorkoutSetDiv.classList.add('hidden')
+    console.log(getSelectedCards());
+    const mainTarget = document.getElementById('bodyTarget-input').value
+    const muscleTarget = document.getElementById('muscleTarget-input').value
+    const newWorkoutSetCard = createWorkoutSetCard(null, mainTarget, muscleTarget)
+    document.getElementById('user-created-workouts-set-container').appendChild(
+        newWorkoutSetCard
+    )
 })
 
 cancelCreateSetWorkoutButton.addEventListener('click', function(e){

@@ -5,3 +5,6 @@
 // initializeNames('gymSense', 'workouts', 1)
 
 // var openRequest = CreateDataBase()
+
+const smallScreenWidth = 800;
+export { smallScreenWidth };

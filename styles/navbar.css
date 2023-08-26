@@ -89,7 +89,7 @@
   background-color: var(--button-color-active);
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
   .nav-items-container, .profile-label-contianer{
     display: none;
   }

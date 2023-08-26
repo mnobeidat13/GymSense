@@ -1,6 +1,7 @@
 // Import necessary functions from other modules
 import { Counter } from "./counter.js";
 import { addData, retrieveData } from "./database.js";
+import { smallScreenWidth } from './index.js';
 
 let db;
 const activeColor = '#3d675ae6';
@@ -144,7 +145,7 @@ export function ExerciseCard(imgSrc, title, sets, reps) {
         console.log(window.location.pathname);
         history.back();
       }
-      if (window.innerWidth <= 600) {
+      if (window.innerWidth <= smallScreenWidth) {
         document.getElementById('workout-card-container').style.display = 'none';
       }
     });
@@ -180,14 +181,14 @@ export function ExerciseCard(imgSrc, title, sets, reps) {
   var nextResetDiv = document.createElement('div');
   nextResetDiv.classList.add('nextResetDiv');
   nextResetDiv.appendChild(resetButton);
-  if(window.innerWidth <= 600 || window.location.pathname == '/singleWorkout.html'){nextResetDiv.appendChild(backButton)}
+  if(window.innerWidth <= smallScreenWidth || window.location.pathname == '/singleWorkout.html'){nextResetDiv.appendChild(backButton)}
 
 
   // Create exercise card element and its components
   var exerciseCard = document.createElement('div');
   exerciseCard.classList.add('exerciseCard');
 
-  if (window.innerWidth <= 600 && window.location.pathname == '/setWorkout.html') {
+  if (window.innerWidth <= smallScreenWidth && window.location.pathname == '/setWorkout.html') {
     const closeButton = createCloseButton();
     exerciseCard.appendChild(closeButton);
   }

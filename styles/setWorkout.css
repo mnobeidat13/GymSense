@@ -62,7 +62,7 @@ hr{
     width: 30%;
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
     .workout-set-main-div{
         padding: 5px;
     }

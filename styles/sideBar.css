@@ -67,7 +67,7 @@
     right: 50px;
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
     .side-bar.active{
         display: flex;
         position: absolute;

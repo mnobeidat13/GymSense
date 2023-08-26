@@ -2,7 +2,6 @@ import { ExerciseCard } from "./exerciseCard.js";
 import { createSmallWorkoutCard } from "./smallWorkoutCard.js";
 
 const queryParams = new URLSearchParams(window.location.search);
-const parameter1 = queryParams.get('numberOfReps');
 
 const smallWorkoutCardsContainer = document.getElementById('small-workout-cards-container');
 

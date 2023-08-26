@@ -226,6 +226,14 @@
     margin-bottom: 0;
 }
 
+
+.create-cancel-buttons-div{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 .cancel-create-set-workout-button{
     width: 100px;
     margin: auto;
@@ -236,11 +244,13 @@
     color: white;
     border-radius: 20px;
     transition: all 0.2s ease-in-out;
+    font-weight: bold;
 }
 
 .cancel-create-set-workout-button:active{
     transform: scale(1.1);
 }
+
 
 .card-container-x{
     display: flex;
